@@ -15,7 +15,7 @@ public final class Tools extends JavaPlugin {
                 "| |_| || (_| || | | | | ||  __/\\__ \\| |  | || |___    | |  | (_) || (_) || |\\__ \\\n" +
                 " \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\n" +
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
-        getLogger().info("Plugin z narzędziami dla administratora");
+        getLogger().info("Plugin z narzędziami dla administratorów");
 
     }
 
