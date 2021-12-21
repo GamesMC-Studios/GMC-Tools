@@ -8,3 +8,8 @@ authors: [ ReferTV ]
 website: gamesmc.pl
 softdepend:
   - PlacehoderAPI
+
+commands:
+  gamemode:
+    description: Polecenie gamemode.
+    default: op

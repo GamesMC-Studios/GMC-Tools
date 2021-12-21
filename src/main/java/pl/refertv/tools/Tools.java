@@ -1,10 +1,18 @@
 package pl.refertv.tools;
 
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.refertv.tools.cmds.GamemodeCommand;
 
 import java.util.logging.Logger;
 
 public final class Tools extends JavaPlugin {
+
+    private static Tools instance;
+    public static Tools getInstance() {
+        return instance;
+    }
 
     @Override
     public void onEnable() {
@@ -17,10 +25,23 @@ public final class Tools extends JavaPlugin {
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
         getLogger().info("Plugin z narzędziami dla administratorów");
 
+        registerCommands();
+
+
+    }
+
+    private void registerCommands() {
+        this.getCommand("gamemode").setExecutor(new GamemodeCommand());
+    }
+
+    @Override
+    public void onLoad() {
+        instance = this;
     }
 
     @Override
     public void onDisable() {
         getLogger().info("Wyłączam plugin" + this.getDescription().getName() + " " + this.getDescription().getVersion());
+        Bukkit.getServer().getScheduler().cancelTasks(this);
     }
 }
