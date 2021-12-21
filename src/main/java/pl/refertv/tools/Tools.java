@@ -21,6 +21,6 @@ public final class Tools extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        getLogger().info("Wyłączam plugin" + this.getDescription().getName() + "" + this.getDescription().getVersion());
+        getLogger().info("Wyłączam plugin" + this.getDescription().getName() + " " + this.getDescription().getVersion());
     }
 }
