@@ -3,7 +3,7 @@ package pl.refertv.tools;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
-import pl.refertv.tools.cmds.GamemodeCommand;
+import pl.refertv.tools.cmds.*;
 
 import java.util.logging.Logger;
 
@@ -31,7 +31,9 @@ public final class Tools extends JavaPlugin {
     }
 
     private void registerCommands() {
+
         this.getCommand("gamemode").setExecutor(new GamemodeCommand());
+        this.getCommand("fly").setExecutor(new FlyCommand());
     }
 
     @Override

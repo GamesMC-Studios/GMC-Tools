@@ -12,4 +12,8 @@ softdepend:
 commands:
   gamemode:
     description: Polecenie gamemode.
-    default: op
+    usage: /gamemode
+    aliases: [gm]
+  fly:
+    description: Polecenia na latanie.
+    usage: /fly
