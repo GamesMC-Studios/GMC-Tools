@@ -1,3 +1,3 @@
 # GMC-Tools
 
-Ten plugin nie jest tymczasowo przeznaczony do używania dla serwerów produkcyjnych.
+Ten plugin tymczasowo nie jest przeznaczony do używania dla serwerów o charakterze produkcyjnym.
