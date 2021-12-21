@@ -17,3 +17,6 @@ commands:
   fly:
     description: Polecenia na latanie.
     usage: /fly
+  online:
+    description: Sprawdza liczbę graczy online
+    aliases: [list]

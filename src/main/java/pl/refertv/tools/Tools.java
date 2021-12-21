@@ -34,6 +34,7 @@ public final class Tools extends JavaPlugin {
 
         this.getCommand("gamemode").setExecutor(new GamemodeCommand());
         this.getCommand("fly").setExecutor(new FlyCommand());
+        this.getCommand("online").setExecutor(new OnlineCommand());
     }
 
     @Override
