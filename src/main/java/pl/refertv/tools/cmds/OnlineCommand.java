@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
+import pl.refertv.tools.Tools;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,7 +16,7 @@ public class OnlineCommand extends CommandBase {
         if (p.hasPermission("gamesmc.online")) {
             if(cmd.getName().equalsIgnoreCase("online")){
                 p.sendMessage("Aktualnie na serwerze jest " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + " graczy online");
-                p.sendTitle("§8•● §6☆ Games§fMC§e.pl §6☆ §8●•", "§eAktualnie na serwerze jest: " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers(), 10, 50, 10);
+                p.sendTitle(Tools.gmc, "§eAktualnie na serwerze jest: " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers(), 10, 50, 10);
             }
         }
     }

@@ -10,6 +10,7 @@ public class FlyCommand extends CommandBase {
         if (p.hasPermission("gamesmc.fly")) {
                 if (p.getAllowFlight() == true) {
                     p.setAllowFlight(false);
+                    p.sendTitle("§8•● §6☆ Games§fMC§e.pl §6☆ §8●•", "§eZmieniłeś tryb gry na przetrwanie", 10, 30, 10);
                 }
                 else {
                 if (p.getAllowFlight() == false){

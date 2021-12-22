@@ -14,6 +14,8 @@ public final class Tools extends JavaPlugin {
         return instance;
     }
 
+    public static String gmc = "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•";
+
     @Override
     public void onEnable() {
         getLogger().info("\n" +
