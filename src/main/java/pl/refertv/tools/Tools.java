@@ -40,6 +40,8 @@ public final class Tools extends JavaPlugin {
         this.getCommand("online").setExecutor(new OnlineCommand());
         this.getCommand("head").setExecutor(new HeadCommand());
         this.getCommand("rename").setExecutor(new RenameCommand());
+        this.getCommand("lore").setExecutor(new LoreCommand());
+        this.getCommand("speed").setExecutor(new FlySpeedCommand());
     }
 
 

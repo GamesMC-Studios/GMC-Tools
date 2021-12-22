@@ -8,7 +8,7 @@ import pl.refertv.tools.Tools;
 public class OnlineCommand extends CommandBase {
 
     @Override
-    protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
+    public boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.online")) {
             if(cmd.getName().equalsIgnoreCase("online")){
                 p.sendMessage("Aktualnie na serwerze jest " + Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers() + " graczy online");

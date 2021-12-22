@@ -22,4 +22,4 @@ public class FlyCommand extends CommandBase {
             }
         return false;
     }
-    }
+}

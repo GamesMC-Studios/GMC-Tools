@@ -25,3 +25,5 @@ commands:
   rename:
     description: Zmienia nazwę przedmiotu w ręku
     usage: /rename <nazwa>
+  lore:
+  speed:
