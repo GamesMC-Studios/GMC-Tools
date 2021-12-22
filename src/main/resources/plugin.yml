@@ -20,3 +20,8 @@ commands:
   online:
     description: Sprawdza liczbę graczy online
     aliases: [list]
+  head:
+    description: Nadaje głowy graczą
+  rename:
+    description: Zmienia nazwę przedmiotu w ręku
+    usage: /rename <nazwa>

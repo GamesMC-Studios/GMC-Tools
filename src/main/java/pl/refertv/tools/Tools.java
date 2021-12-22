@@ -11,6 +11,7 @@ public final class Tools extends JavaPlugin {
 
     private static Tools instance;
     public static Tools getInstance() {
+
         return instance;
     }
 
@@ -27,26 +28,31 @@ public final class Tools extends JavaPlugin {
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
         getLogger().info("Plugin z narzędziami dla administratorów");
 
+        instance = this;
         registerCommands();
 
 
     }
 
     private void registerCommands() {
-
         this.getCommand("gamemode").setExecutor(new GamemodeCommand());
         this.getCommand("fly").setExecutor(new FlyCommand());
         this.getCommand("online").setExecutor(new OnlineCommand());
+        this.getCommand("head").setExecutor(new HeadCommand());
+        this.getCommand("rename").setExecutor(new RenameCommand());
     }
 
-    @Override
-    public void onLoad() {
-        instance = this;
-    }
 
     @Override
     public void onDisable() {
-        getLogger().info("Wyłączam plugin" + this.getDescription().getName() + " " + this.getDescription().getVersion());
+        getLogger().info("\n" +
+                "  ____                               __  __   ____   _____                _      \n" +
+                " / ___|  __ _  _ __ ___    ___  ___ |  \\/  | / ___| |_   _|  ___    ___  | | ___ \n" +
+                "| |  _  / _` || '_ ` _ \\  / _ \\/ __|| |\\/| || |       | |   / _ \\  / _ \\ | |/ __|\n" +
+                "| |_| || (_| || | | | | ||  __/\\__ \\| |  | || |___    | |  | (_) || (_) || |\\__ \\\n" +
+                " \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\n" +
+                "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
+        getLogger().info("Dziękujemy za używanie naszego pluginu.\n" + "Wyłączam plugin...");
         Bukkit.getServer().getScheduler().cancelTasks(this);
     }
 }

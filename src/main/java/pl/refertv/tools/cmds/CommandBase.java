@@ -18,7 +18,7 @@ public abstract class CommandBase implements CommandExecutor {
         return false;
     }
 
-    protected abstract void onCommand(Player player, Command command, String label, String[] args);
+    protected abstract boolean onCommand(Player p, Command cmd, String label, String[] args);
 
     /**
      * Register base for bukkit command

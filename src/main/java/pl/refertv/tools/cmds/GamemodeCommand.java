@@ -3,16 +3,14 @@ package pl.refertv.tools.cmds;
 import org.bukkit.GameMode;
 import org.bukkit.command.*;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 import pl.refertv.tools.Tools;
-
-import java.util.Objects;
 
 public class GamemodeCommand extends CommandBase {
 
     @Override
-    protected void onCommand(Player p, Command cmd, String label, String[] args) {
+    protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.gamemode")) {
+
             if (args.length > 0) {
                 if (args[0].equalsIgnoreCase("0")) {
                     p.setGameMode(GameMode.SURVIVAL);
@@ -32,6 +30,7 @@ public class GamemodeCommand extends CommandBase {
                 }
             }
         }
+        return false;
     }
 }
 
