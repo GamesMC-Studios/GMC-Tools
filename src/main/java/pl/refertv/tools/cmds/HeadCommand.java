@@ -22,11 +22,10 @@ public class HeadCommand extends CommandBase {
             SkullMeta head = (SkullMeta) skull.getItemMeta();
 
             head.setOwner(args[0]);
-            head.setDisplayName("§eGłowa " + p.getName());
+            head.setDisplayName("§eGłowa " + args[0]);
             skull.setItemMeta(head);
 
             p.getPlayer().getInventory().addItem(skull);
-            p.getPlayer().sendMessage("§7Otrzymałeś głowę gracza" + args[0]);
             p.getPlayer().sendTitle(Tools.gmc, "§fOtrzymałeś głowę gracza §e" + args[0], 10, 30, 10);
         }
         return false;

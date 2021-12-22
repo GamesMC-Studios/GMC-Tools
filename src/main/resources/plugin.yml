@@ -27,3 +27,7 @@ commands:
     usage: /rename <nazwa>
   lore:
   speed:
+  enderchest:
+  inv:
+  heal:
+  food:

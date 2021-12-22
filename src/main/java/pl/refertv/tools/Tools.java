@@ -42,6 +42,10 @@ public final class Tools extends JavaPlugin {
         this.getCommand("rename").setExecutor(new RenameCommand());
         this.getCommand("lore").setExecutor(new LoreCommand());
         this.getCommand("speed").setExecutor(new FlySpeedCommand());
+        this.getCommand("enderchest").setExecutor(new EnderChestCommand());
+        this.getCommand("inv").setExecutor(new InvCommand());
+        this.getCommand("heal").setExecutor(new HealCommand());
+        this.getCommand("fod").setExecutor(new HealCommand());
     }
 
 
