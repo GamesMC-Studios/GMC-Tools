@@ -80,6 +80,7 @@ public final class Tools extends JavaPlugin {
         this.getCommand("inv").setExecutor(new InvCommand());
         this.getCommand("heal").setExecutor(new HealCommand());
         this.getCommand("food").setExecutor(new FoodCommand());
+        this.getCommand("time").setExecutor(new TimeCommand());
     }
 
 

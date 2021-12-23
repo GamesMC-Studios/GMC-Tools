@@ -34,3 +34,4 @@ commands:
   inv:
   heal:
   food:
+  time:
