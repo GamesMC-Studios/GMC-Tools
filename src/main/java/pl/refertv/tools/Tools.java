@@ -1,13 +1,20 @@
 package pl.refertv.tools;
 
+import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.refertv.tools.cmds.*;
+import pl.refertv.tools.listeners.Join;
 
 import java.util.logging.Logger;
 
 public final class Tools extends JavaPlugin {
+
+    public static Permission permission = null;
 
     private static Tools instance;
     public static Tools getInstance() {
@@ -16,6 +23,15 @@ public final class Tools extends JavaPlugin {
     }
 
     public static String gmc = "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•";
+
+    private boolean setupPermissions()
+    {
+        RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class);
+        if (permissionProvider != null) {
+            permission = permissionProvider.getProvider();
+        }
+        return (permission != null);
+    }
 
     @Override
     public void onEnable() {
@@ -28,10 +44,26 @@ public final class Tools extends JavaPlugin {
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
         getLogger().info("Plugin z narzędziami dla administratorów");
 
-        instance = this;
+
         registerCommands();
+        registerListeners();
+        setupPermissions();
+
+        instance = this;
+
+        if (!setupPermissions()) {
+            this.getLogger().severe("Disabled due to no Vault dependency found!");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+        this.setupPermissions();
 
 
+
+    }
+
+    private void registerListeners() {
+        getServer().getPluginManager().registerEvents(new Join(), this);
     }
 
     private void registerCommands() {

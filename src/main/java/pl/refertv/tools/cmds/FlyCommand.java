@@ -18,11 +18,13 @@ public class FlyCommand extends CommandBase {
                 }
                 if (gracz.getAllowFlight() == true) {
                     gracz.setAllowFlight(false);
-                    gracz.sendTitle(Tools.gmc, "§fLatanie zostało §cwyłączone", 10, 30, 10);
+                    gracz.sendTitle(Tools.gmc, "§fLatanie zostało §cwyłączone §fprzez §6" + p.getName(), 10, 30, 10);
+                    p.sendTitle(Tools.gmc, "§cWyłączyłeś §flatanie dla użytkownika §6" + args[0], 10, 30, 10);
                 } else {
                     if (gracz.getAllowFlight() == false) {
                         gracz.setAllowFlight(true);
-                        gracz.sendTitle(Tools.gmc, "§fLatanie zostało §awłączone", 10, 30, 10);
+                        gracz.sendTitle(Tools.gmc, "§fLatanie zostało §awłączone §fprzez §6" + p.getName(), 10, 30, 10);
+                        p.sendTitle(Tools.gmc, "§aWłączyłeś §flatanie dla użytkownika §6" + args[0], 10, 30, 10);
                     }
                 }
             }

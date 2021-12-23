@@ -8,6 +8,7 @@ authors: [ ReferTV ]
 website: gamesmc.pl
 softdepend:
   - PlacehoderAPI
+  - Vault
 
 commands:
   gamemode:
