@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 public final class Tools extends JavaPlugin {
 
-    public static Permission permission = null;
+    public static Permission permission = null;;
 
     private static Tools instance;
     public static Tools getInstance() {
@@ -23,6 +23,8 @@ public final class Tools extends JavaPlugin {
     }
 
     public static String gmc = "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•";
+    public static String arg = "§cPodałeś niepoprawny argument";
+    public static String mbp = "§cMusisz być graczem aby wykonać to polecenie";
 
     private boolean setupPermissions()
     {
