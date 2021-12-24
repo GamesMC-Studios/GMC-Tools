@@ -2,9 +2,11 @@ package pl.refertv.tools.listeners;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import pl.refertv.tools.Tools;
 
 
 public class Join implements Listener {
@@ -13,8 +15,9 @@ public class Join implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
+        Player p = event.getPlayer();
+        p.sendTitle(Tools.gmc, "§fWitaj na serwerze §6" + p.getName(), 10, 50, 10);
         joinText = PlaceholderAPI.setPlaceholders(event.getPlayer(), joinText);
-
         event.joinMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(joinText));
 
     }
