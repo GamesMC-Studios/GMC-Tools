@@ -6,13 +6,13 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import pl.refertv.tools.Tools;
 
-public class InvCommand extends CommandBase {
+public class CraftingCommand extends CommandBase {
 
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.crafting")) {
             if (args.length == 0) {
-                p.openInventory(p.getInventory());
+                p.openWorkbench(null, true);
                 p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
             }
             if (p.hasPermission("gamesmc.crafting.others")) {
@@ -22,7 +22,7 @@ public class InvCommand extends CommandBase {
                         p.sendMessage("§cGracz " + args[0] + " nie jest online!");
                         return false;
                     }
-                    gracz.openInventory(gracz.getInventory());
+                    gracz.openWorkbench(null, true);
                     gracz.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
                 }
             } else {

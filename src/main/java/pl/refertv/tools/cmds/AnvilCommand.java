@@ -6,24 +6,24 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import pl.refertv.tools.Tools;
 
-public class InvCommand extends CommandBase {
+public class AnvilCommand extends CommandBase {
 
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
-        if (p.hasPermission("gamesmc.crafting")) {
+        if (p.hasPermission("gamesmc.anvil")) {
             if (args.length == 0) {
-                p.openInventory(p.getInventory());
-                p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
+                p.openAnvil(null, true);
+                p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
             }
-            if (p.hasPermission("gamesmc.crafting.others")) {
+            if (p.hasPermission("gamesmc.anvil.others")) {
                 if (args.length == 1) {
                     Player gracz = Bukkit.getPlayer(args[0]);
                     if (gracz == null) {
                         p.sendMessage("§cGracz " + args[0] + " nie jest online!");
                         return false;
                     }
-                    gracz.openInventory(gracz.getInventory());
-                    gracz.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
+                    gracz.openAnvil(null, true);
+                    gracz.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
                 }
             } else {
                 p.sendMessage(Tools.noperms);

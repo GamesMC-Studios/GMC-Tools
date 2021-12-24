@@ -22,12 +22,11 @@ public class RenameCommand extends CommandBase {
                     itemmeta.setDisplayName(args[0].replace("&", "§").replace("-", " "));
                     item.setItemMeta(itemmeta);
                     p.sendTitle(Tools.gmc, "§eZmieniłeś nazwę przedmiotu w ręku", 10, 30, 10);
-
                     if (p.getInventory().getItemInMainHand().getType() == Material.AIR)
                         p.sendTitle(Tools.gmc, "§fMusisz trzymać jakiś przedmiot w ręku", 10, 30, 10);
                     return true;
                 } catch (Exception e) {
-                    p.sendTitle(Tools.gmc, "§cNiepoprawne użycie tej komendy", 10, 30, 10);
+                    p.sendTitle(Tools.gmc, Tools.error);
 
                 }
 

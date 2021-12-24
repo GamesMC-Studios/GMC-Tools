@@ -24,13 +24,23 @@ commands:
     aliases: [list]
   head:
     description: Nadaje głowy graczą
+    aliases: [głowa]
   rename:
     description: Zmienia nazwę przedmiotu w ręku
     usage: /rename <nazwa>
   lore:
   speed:
   enderchest:
+    aliases: [ec]
   inv:
+    aliases: [invsee]
   heal:
+    aliases: [uzdrowienie]
   food:
+    aliases: [nakramienie]
   time:
+    aliases: [czas]
+  crafting:
+    aliases: [craft]
+  anvil:
+    aliases: [kowadło]

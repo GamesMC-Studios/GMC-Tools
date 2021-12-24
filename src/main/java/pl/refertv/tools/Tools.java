@@ -28,6 +28,7 @@ public final class Tools extends JavaPlugin {
     public static String arg = "§cPodałeś niepoprawny argument";
     public static String mbp = "§cMusisz być graczem aby wykonać to polecenie";
     public static String noperms = "§cNie masz uprawnień na wykonanie tego polecenia.";
+    public static String error = "§cWystąpił nieoczekiwany błąd.";
 
     private boolean setupPermissions()
     {
@@ -64,7 +65,7 @@ public final class Tools extends JavaPlugin {
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             Bukkit.getPluginManager().registerEvents(new Join(), this);;
-            getLogger().info("Ładuję listenery");
+            getLogger().info("Ładuję listenery...");
         } else {
             getLogger().info("Could not find PlaceholderAPI! This plugin is required.");
             Bukkit.getPluginManager().disablePlugin(this);
@@ -76,6 +77,7 @@ public final class Tools extends JavaPlugin {
     }
 
     private void registerCommands() {
+        getLogger().info("Ładowanie komend...");
         this.getCommand("gamemode").setExecutor(new GamemodeCommand());
         this.getCommand("fly").setExecutor(new FlyCommand());
         this.getCommand("online").setExecutor(new OnlineCommand());
@@ -88,6 +90,8 @@ public final class Tools extends JavaPlugin {
         this.getCommand("heal").setExecutor(new HealCommand());
         this.getCommand("food").setExecutor(new FoodCommand());
         this.getCommand("time").setExecutor(new TimeCommand());
+        this.getCommand("crafting").setExecutor(new CraftingCommand());
+        this.getCommand("anvil").setExecutor(new AnvilCommand());
     }
 
 

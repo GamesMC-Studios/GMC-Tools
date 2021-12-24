@@ -5,23 +5,27 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import pl.refertv.tools.Tools;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class TimeCommand extends CommandBase {
 
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
-        if (p.hasPermission("gamesmc.timeset")) {
-            if (args.length == 0)
-                p.sendTitle(Tools.gmc, Tools.arg, 10, 50, 10);
-            else if (args[0].equalsIgnoreCase("day") || (args[0].equalsIgnoreCase("dzień")))
+        if (p.hasPermission("gamesmc.czas")) {
+            if (args.length == 0) {
+                p.sendTitle(Tools.gmc, Tools.arg);
+                return true; }
+            {
+            if (args[0].equalsIgnoreCase("dzień") || (args[0].equalsIgnoreCase("day"))) {
                 p.getWorld().setTime(6000);
-            else if (args[0].equalsIgnoreCase("night") || (args[0].equalsIgnoreCase("noc")))
+                Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(Tools.gmc, " Czas został zmieniony na §edzień §fprzez administratora §6" + p.getName()));
+            }
+            if (args[0].equalsIgnoreCase("noc") || args[0].equalsIgnoreCase("night")) {
                 p.getWorld().setTime(18000);
-            return false;
+                Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(Tools.gmc, "Czas został zmieniony na §8noc §fprzez administratora §6" + p.getName()));
+            }
+            }
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
-        return false;
+        return true;
     }
 }
