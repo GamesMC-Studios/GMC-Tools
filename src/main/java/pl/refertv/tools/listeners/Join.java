@@ -1,18 +1,21 @@
 package pl.refertv.tools.listeners;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
+import me.clip.placeholderapi.PlaceholderAPI;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
-import pl.refertv.tools.Tools;
+
 
 public class Join implements Listener {
 
+    public String joinText = "&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fdołączył do gry!";
+
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        Player p = event.getPlayer();
-        p.sendTitle(Tools.gmc, "§fWitaj na serwerze " + p.getName(), 10, 30, 10);
+    public void onJoin(PlayerJoinEvent event) {
+        joinText = PlaceholderAPI.setPlaceholders(event.getPlayer(), joinText);
+
+        event.joinMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(joinText));
+
     }
 }

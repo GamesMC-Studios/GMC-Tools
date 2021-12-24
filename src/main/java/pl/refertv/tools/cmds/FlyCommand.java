@@ -10,23 +10,8 @@ public class FlyCommand extends CommandBase {
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.fly")) {
-            if (args.length == 1) {
-                Player gracz = Bukkit.getPlayer(args[0]);
-                if (gracz == null) {
-                    p.sendMessage("§cGracz " + args[0] + " nie jest online!");
-                    return false;
-                }
-                if (gracz.getAllowFlight() == true) {
-                    gracz.setAllowFlight(false);
-                    gracz.sendTitle(Tools.gmc, "§fLatanie zostało §cwyłączone §fprzez §6" + p.getName(), 10, 30, 10);
-                    p.sendTitle(Tools.gmc, "§cWyłączyłeś §flatanie dla użytkownika §6" + args[0], 10, 30, 10);
-                } else {
-                    if (gracz.getAllowFlight() == false) {
-                        gracz.setAllowFlight(true);
-                        gracz.sendTitle(Tools.gmc, "§fLatanie zostało §awłączone §fprzez §6" + p.getName(), 10, 30, 10);
-                        p.sendTitle(Tools.gmc, "§aWłączyłeś §flatanie dla użytkownika §6" + args[0], 10, 30, 10);
-                    }
-                }
+            if (args.length > 1) {
+                p.sendTitle(Tools.gmc, Tools.arg, 10, 10, 10);
             }
             if (args.length == 0) {
                 if (p.getAllowFlight() == true) {
@@ -39,8 +24,28 @@ public class FlyCommand extends CommandBase {
                     }
                 }
             }
+            if (p.hasPermission("gamesmc.fly.others")) {
+                if (args.length == 1) {
+                    Player gracz = Bukkit.getPlayer(args[0]);
+                    if (gracz == null) {
+                        p.sendMessage("§cGracz " + args[0] + " nie jest online!");
+                        return false;
+                    }
+                    if (gracz.getAllowFlight() == true) {
+                        gracz.setAllowFlight(false);
+                        gracz.sendTitle(Tools.gmc, "§fLatanie zostało §cwyłączone §fprzez §6" + p.getName(), 10, 30, 10);
+                        p.sendTitle(Tools.gmc, "§cWyłączyłeś §flatanie dla użytkownika §6" + args[0], 10, 30, 10);
+                    } else {
+                        if (gracz.getAllowFlight() == false) {
+                            gracz.setAllowFlight(true);
+                            gracz.sendTitle(Tools.gmc, "§fLatanie zostało §ayłączone §fprzez §6" + p.getName(), 10, 30, 10);
+                            p.sendTitle(Tools.gmc, "§aWłączyłeś §flatanie dla użytkownika §6" + args[0], 10, 30, 10);
+                        }
+                    }
+                }
+            }
         }
-        p.sendMessage(Tools.noperms);
-        return false;
+        return true;
     }
 }
+

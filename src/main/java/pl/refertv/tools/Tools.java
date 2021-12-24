@@ -5,18 +5,20 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 import pl.refertv.tools.cmds.*;
 import pl.refertv.tools.listeners.Join;
-
-import java.util.logging.Logger;
 
 public final class Tools extends JavaPlugin {
 
     public static Permission permission = null;;
 
-    private static Tools instance;
+    private static Tools instance;;
+
     public static Tools getInstance() {
 
         return instance;
@@ -47,26 +49,30 @@ public final class Tools extends JavaPlugin {
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
         getLogger().info("Plugin z narzędziami dla administratorów");
 
-
-        registerCommands();
-        registerListeners();
-        setupPermissions();
-
-        instance = this;
-
         if (!setupPermissions()) {
             this.getLogger().severe("Disabled due to no Vault dependency found!");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
+
+        registerCommands();
+        registerListeners();
+        setupPermissions();
         this.setupPermissions();
 
+        instance = this;
 
-
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            Bukkit.getPluginManager().registerEvents(new Join(), this);;
+            getLogger().info("Ładuję listenery");
+        } else {
+            getLogger().info("Could not find PlaceholderAPI! This plugin is required.");
+            Bukkit.getPluginManager().disablePlugin(this);
+        }
     }
 
+
     private void registerListeners() {
-        getServer().getPluginManager().registerEvents(new Join(), this);
     }
 
     private void registerCommands() {
@@ -83,6 +89,7 @@ public final class Tools extends JavaPlugin {
         this.getCommand("food").setExecutor(new FoodCommand());
         this.getCommand("time").setExecutor(new TimeCommand());
     }
+
 
 
     @Override
