@@ -15,25 +15,26 @@ public class LoreCommand extends CommandBase {
         if (p.hasPermission("gamesmc.lore")) {
             if (args.length == 0)
                 p.sendTitle(Tools.gmc, "Wpisz argument z opisem przedmiotu", 10, 10, 10);
-        }
-        if (args.length > 0) {
-            try {
-                ItemStack item = p.getItemInHand();
-                ItemMeta itemmeta = item.getItemMeta();
-                itemmeta.setLore(Collections.singletonList(args[0].replace("&", "§").replace("-", " ")));
-                item.setItemMeta(itemmeta);
-                p.sendTitle(Tools.gmc, "§eZmieniłeś opis przedmiotu w ręku", 10, 30, 10);
+            if (args.length > 0) {
+                try {
+                    ItemStack item = p.getItemInHand();
+                    ItemMeta itemmeta = item.getItemMeta();
+                    itemmeta.setLore(Collections.singletonList(args[0].replace("&", "§").replace("-", " ")));
+                    item.setItemMeta(itemmeta);
+                    p.sendTitle(Tools.gmc, "§eZmieniłeś opis przedmiotu w ręku", 10, 30, 10);
 
-                if (p.getInventory().getItemInMainHand().getType() == Material.AIR)
-                    p.sendTitle(Tools.gmc, "§fMusisz trzymać jakiś przedmiot w ręku", 10, 30, 10);
+                    if (p.getInventory().getItemInMainHand().getType() == Material.AIR)
+                        p.sendTitle(Tools.gmc, "§fMusisz trzymać jakiś przedmiot w ręku", 10, 30, 10);
+                    return true;
+                } catch (Exception e) {
+                    p.sendTitle(Tools.gmc, "§cNiepoprawne użycie tej komendy", 10, 30, 10);
+
+                }
+
                 return true;
-            } catch (Exception e) {
-                p.sendTitle(Tools.gmc, "§cNiepoprawne użycie tej komendy", 10, 30, 10);
-
             }
-
-
         }
+        p.sendMessage(Tools.noperms);
         return false;
     }
 }

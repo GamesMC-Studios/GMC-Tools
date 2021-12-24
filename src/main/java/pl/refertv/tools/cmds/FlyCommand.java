@@ -40,6 +40,7 @@ public class FlyCommand extends CommandBase {
                 }
             }
         }
+        p.sendMessage(Tools.noperms);
         return false;
     }
 }

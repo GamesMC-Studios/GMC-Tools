@@ -25,6 +25,7 @@ public final class Tools extends JavaPlugin {
     public static String gmc = "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•";
     public static String arg = "§cPodałeś niepoprawny argument";
     public static String mbp = "§cMusisz być graczem aby wykonać to polecenie";
+    public static String noperms = "§cNie masz uprawnień na wykonanie tego polecenia.";
 
     private boolean setupPermissions()
     {

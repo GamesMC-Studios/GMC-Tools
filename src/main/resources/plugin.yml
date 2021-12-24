@@ -15,8 +15,6 @@ commands:
     description: Polecenie gamemode.
     usage: /gamemode
     aliases: [gm]
-    permission: gamesmc.gamemode
-    permission-message: Nie masz uprawnień.
   fly:
     description: Polecenia na latanie.
     usage: /fly

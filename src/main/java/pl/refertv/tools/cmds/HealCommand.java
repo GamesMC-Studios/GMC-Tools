@@ -27,6 +27,7 @@ public class HealCommand extends CommandBase {
                 p.playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 2F, 1F);
             }
         }
+        p.sendMessage(Tools.noperms);
         return false;
     }
 

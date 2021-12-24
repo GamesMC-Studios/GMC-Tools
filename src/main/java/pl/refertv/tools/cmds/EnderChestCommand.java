@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
+import pl.refertv.tools.Tools;
 
 public class EnderChestCommand extends CommandBase {
 
@@ -25,6 +26,7 @@ public class EnderChestCommand extends CommandBase {
                 p.playSound(p.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 2F, 1F);
             }
         }
+        p.sendMessage(Tools.noperms);
         return false;
     }
 
