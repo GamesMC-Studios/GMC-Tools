@@ -27,13 +27,12 @@ public class RenameCommand extends CommandBase {
                     return true;
                 } catch (Exception e) {
                     p.sendTitle(Tools.gmc, Tools.error);
-
                 }
-
                 return true;
             }
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
         return false;
     }
 }

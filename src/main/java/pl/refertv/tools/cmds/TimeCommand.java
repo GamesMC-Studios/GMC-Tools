@@ -26,6 +26,6 @@ public class TimeCommand extends CommandBase {
         } else {
             p.sendMessage(Tools.noperms);
         }
-        return true;
+        return false;
     }
 }

@@ -19,16 +19,18 @@ public class HealCommand extends CommandBase {
                 }
                 gracz.setHealth(20);
                 gracz.setFoodLevel(20);
+                gracz.sendTitle(Tools.gmc, "Zostałeś uleczony przez §6" + p.getName());
                 gracz.playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 2F, 1F);
             }
             if (args.length == 0) {
                 p.setHealth(20);
                 p.setFoodLevel(20);
+                p.sendTitle(Tools.gmc, "Uleczyłeś się");
                 p.playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 2F, 1F);
             }
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
         return false;
     }
-
 }

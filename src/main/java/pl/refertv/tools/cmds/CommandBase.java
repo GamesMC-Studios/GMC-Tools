@@ -33,10 +33,4 @@ public abstract class CommandBase implements CommandExecutor {
         return command;
     }
 
-    public static class EmptyTab implements TabCompleter {
-        @Override
-        public List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, String[] strings) {
-            return Collections.emptyList();
-        }
-    }
 }

@@ -47,9 +47,8 @@ public class FlyCommand extends CommandBase {
             else {
                 p.sendMessage(Tools.noperms);
             }
-        }
-    else {
-        p.sendMessage(Tools.noperms);
+        } else {
+            p.sendMessage(Tools.noperms);
         }
         return false;
     }

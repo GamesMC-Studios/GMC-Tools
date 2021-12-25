@@ -26,8 +26,9 @@ public class OnlineCommand extends CommandBase {
             p.sendMessage("§fAktualnie na serwerze jest §e" + players.size() + "/" + Bukkit.getMaxPlayers() + " §fgraczy online.§7\n" + online.toString());
             p.sendTitle(Tools.gmc, "§eAktualnie na serwerze jest: " + players.size() + "/" + Bukkit.getMaxPlayers(), 10, 50, 10);
             return true;
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
         return false;
     }
 }

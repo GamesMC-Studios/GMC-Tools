@@ -6,24 +6,24 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import pl.refertv.tools.Tools;
 
-public class InvCommand extends CommandBase {
+public class CartographyTableCommand extends CommandBase {
 
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
-        if (p.hasPermission("gamesmc.crafting")) {
+        if (p.hasPermission("gamesmc.cartographytable")) {
             if (args.length == 0) {
-                p.openInventory(p.getInventory());
+                p.openCartographyTable(null, true);
                 p.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
             }
-            if (p.hasPermission("gamesmc.crafting.others")) {
+            if (p.hasPermission("gamesmc.cartographytable.others")) {
                 if (args.length == 1) {
                     Player gracz = Bukkit.getPlayer(args[0]);
                     if (gracz == null) {
-                        p.sendMessage("§cGracz " + args[0] + " jest offline!");
+                        p.sendMessage("§cGracz " + args[0] + " nie jest online!");
                         return false;
                     }
-                    p.openInventory(gracz.getInventory());
-                    p.playSound(gracz.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
+                    gracz.openCartographyTable(null, true);
+                    gracz.playSound(p.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
                 }
             } else {
                 p.sendMessage(Tools.noperms);
@@ -34,3 +34,4 @@ public class InvCommand extends CommandBase {
         return false;
     }
 }
+

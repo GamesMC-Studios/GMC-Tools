@@ -25,11 +25,12 @@ public class EnderChestCommand extends CommandBase {
                 p.openInventory(p.getEnderChest());
                 p.playSound(p.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 2F, 1F);
             }
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
+
         return false;
     }
-
 }
 
 

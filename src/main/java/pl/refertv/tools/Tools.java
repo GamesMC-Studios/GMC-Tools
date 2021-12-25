@@ -1,21 +1,13 @@
 package pl.refertv.tools;
 
-import net.milkbowl.vault.chat.Chat;
-import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.RegisteredServiceProvider;
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
 import pl.refertv.tools.cmds.*;
 import pl.refertv.tools.listeners.Join;
 
 public final class Tools extends JavaPlugin {
-
-    public static Permission permission = null;;
 
     private static Tools instance;;
 
@@ -27,17 +19,8 @@ public final class Tools extends JavaPlugin {
     public static String gmc = "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•";
     public static String arg = "§cPodałeś niepoprawny argument";
     public static String mbp = "§cMusisz być graczem aby wykonać to polecenie";
-    public static String noperms = "§cNie masz uprawnień na wykonanie tego polecenia.";
+    public static String noperms = "§cNie masz uprawnień do wykonania tego polecenia, lub takie polecenie nie istnieje.";
     public static String error = "§cWystąpił nieoczekiwany błąd.";
-
-    private boolean setupPermissions()
-    {
-        RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.permission.Permission.class);
-        if (permissionProvider != null) {
-            permission = permissionProvider.getProvider();
-        }
-        return (permission != null);
-    }
 
     @Override
     public void onEnable() {
@@ -50,16 +33,7 @@ public final class Tools extends JavaPlugin {
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
         getLogger().info("Plugin z narzędziami dla administratorów");
 
-        if (!setupPermissions()) {
-            this.getLogger().severe("Disabled due to no Vault dependency found!");
-            Bukkit.getPluginManager().disablePlugin(this);
-            return;
-        }
-
         registerCommands();
-        registerListeners();
-        setupPermissions();
-        this.setupPermissions();
 
         instance = this;
 
@@ -67,13 +41,9 @@ public final class Tools extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new Join(), this);;
             getLogger().info("Ładuję listenery...");
         } else {
-            getLogger().info("Could not find PlaceholderAPI! This plugin is required.");
+            getLogger().info("Nie mogę znaleźć PlaceholderAPI, zainstaluj ten plugin na serwerze.");
             Bukkit.getPluginManager().disablePlugin(this);
         }
-    }
-
-
-    private void registerListeners() {
     }
 
     private void registerCommands() {
@@ -92,9 +62,14 @@ public final class Tools extends JavaPlugin {
         this.getCommand("time").setExecutor(new TimeCommand());
         this.getCommand("crafting").setExecutor(new CraftingCommand());
         this.getCommand("anvil").setExecutor(new AnvilCommand());
+        this.getCommand("pogoda").setExecutor(new WeatherCommand());
+        this.getCommand("cartographytable").setExecutor(new CartographyTableCommand());
+        this.getCommand("grindstone").setExecutor(new GrindstoneCommand());
+        this.getCommand("loom").setExecutor(new LoomCommand());
+        this.getCommand("smitchingtable").setExecutor(new SmitchingTableCommand());
+        this.getCommand("stonecutter").setExecutor(new StonecutterCommand());
+
     }
-
-
 
     @Override
     public void onDisable() {
@@ -106,6 +81,5 @@ public final class Tools extends JavaPlugin {
                 " \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\n" +
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
         getLogger().info("Dziękujemy za używanie naszego pluginu.\n" + "Wyłączam plugin...");
-        Bukkit.getServer().getScheduler().cancelTasks(this);
     }
 }

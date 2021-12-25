@@ -34,8 +34,6 @@ public class GamemodeCommand extends CommandBase {
                 Player player;
                 if (args.length == 1) {
                     if (!(p instanceof Player)) {
-                        // message saying cannot set the gamemode of console
-                        // requiring a player arg
                         p.sendMessage(Tools.mbp);
                         return true;
                     }
@@ -60,8 +58,9 @@ public class GamemodeCommand extends CommandBase {
                 player.sendTitle(Tools.gmc, "Twój tryb gry został zmieniony na §a" + mode.toString().toLowerCase(), 10, 10, 10);
             }
             return true;
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
         return false;
     }
 }

@@ -30,8 +30,9 @@ public class HeadCommand extends CommandBase {
                 p.getPlayer().sendTitle(Tools.gmc, "§fOtrzymałeś głowę gracza §e" + args[0], 10, 30, 10);
             }
             return true;
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
         return false;
     }
 }

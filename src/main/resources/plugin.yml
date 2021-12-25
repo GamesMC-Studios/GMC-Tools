@@ -44,3 +44,11 @@ commands:
     aliases: [craft]
   anvil:
     aliases: [kowadło]
+  pogoda:
+    aliases: [weather]
+  cartographytable:
+    aliases: [ctable]
+  stonecutter:
+  smitchingtable:
+  loom:
+  grindstone:

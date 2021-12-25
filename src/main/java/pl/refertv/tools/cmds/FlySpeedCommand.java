@@ -29,8 +29,9 @@ public class FlySpeedCommand extends CommandBase {
                 }
             }
             return true;
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
         return false;
     }
 }

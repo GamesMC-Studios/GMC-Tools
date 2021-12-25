@@ -24,8 +24,9 @@ public class FoodCommand extends CommandBase {
                 p.setFoodLevel(20);
                 p.playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 2F, 1F);
             }
+        } else {
+            p.sendMessage(Tools.noperms);
         }
-        p.sendMessage(Tools.noperms);
         return false;
     }
 
