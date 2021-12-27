@@ -12,7 +12,6 @@ public class ClearCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.clear")) {
             if (args.length == 0) {
-                if (args[0].equalsIgnoreCase("clear")) {
                     p.getInventory().clear();
                     p.sendTitle(Tools.gmc, "Twój ekwipunek został wyczyszczony");
                 }
@@ -30,8 +29,7 @@ public class ClearCommand extends CommandBase {
                 } else {
                     p.sendMessage(Tools.noperms);
                 }
-            }
-        } else {
+            } else {
             p.sendMessage(Tools.noperms);
         }
         return false;
