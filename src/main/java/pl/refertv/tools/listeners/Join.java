@@ -12,10 +12,7 @@ import pl.refertv.tools.Tools;
 
 public class Join implements Listener {
 
-    @EventHandler(
-            priority = EventPriority.HIGHEST,
-            ignoreCancelled = true
-    )
+    @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         final Player p = e.getPlayer();
         if (p.hasPermission("gamesmc.rank")) {

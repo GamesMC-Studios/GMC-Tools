@@ -55,19 +55,20 @@ public final class Tools extends JavaPlugin {
         this.getCommand("rename").setExecutor(new RenameCommand());
         this.getCommand("lore").setExecutor(new LoreCommand());
         this.getCommand("speed").setExecutor(new FlySpeedCommand());
-        this.getCommand("enderchest").setExecutor(new EnderChestCommand());
-        this.getCommand("inv").setExecutor(new InvCommand());
         this.getCommand("heal").setExecutor(new HealCommand());
         this.getCommand("food").setExecutor(new FoodCommand());
         this.getCommand("time").setExecutor(new TimeCommand());
-        this.getCommand("crafting").setExecutor(new CraftingCommand());
-        this.getCommand("anvil").setExecutor(new AnvilCommand());
         this.getCommand("pogoda").setExecutor(new WeatherCommand());
-        this.getCommand("cartographytable").setExecutor(new CartographyTableCommand());
+        this.getCommand("inv").setExecutor(new InvCommand());
+        this.getCommand("crafting").setExecutor(new CraftingCommand());
+        this.getCommand("enderchest").setExecutor(new EnderChestCommand());
+        this.getCommand("anvil").setExecutor(new AnvilCommand());
         this.getCommand("grindstone").setExecutor(new GrindstoneCommand());
         this.getCommand("loom").setExecutor(new LoomCommand());
+        this.getCommand("cartographytable").setExecutor(new CartographyTableCommand());
         this.getCommand("smitchingtable").setExecutor(new SmitchingTableCommand());
         this.getCommand("stonecutter").setExecutor(new StonecutterCommand());
+        this.getCommand("clear").setExecutor(new ClearCommand());
 
     }
 
