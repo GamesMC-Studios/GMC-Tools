@@ -69,6 +69,7 @@ public final class Tools extends JavaPlugin {
         this.getCommand("smitchingtable").setExecutor(new SmitchingTableCommand());
         this.getCommand("stonecutter").setExecutor(new StonecutterCommand());
         this.getCommand("clear").setExecutor(new ClearCommand());
+        this.getCommand("getpos").setExecutor(new GetPosCommand());
 
     }
 

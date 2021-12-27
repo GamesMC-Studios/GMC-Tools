@@ -17,7 +17,7 @@ public class Join implements Listener {
         final Player p = e.getPlayer();
         if (p.hasPermission("gamesmc.rank")) {
             p.sendTitle(Tools.gmc, "§fWitaj na serwerze §6" + p.getName());
-            String j = "&8* %vault_ranks% &6%player_name% &fdołączył do gry!";
+            String j = "&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fdołączył do gry!";
             j = PlaceholderAPI.setPlaceholders(e.getPlayer(), j);
             e.joinMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(j));
         }
