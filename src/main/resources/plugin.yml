@@ -4,7 +4,7 @@ main: pl.refertv.tools.Tools
 api-version: 1.18
 description: Plugin z narzędziami dla administratora.
 prefix: GamesMC Tools
-authors: [ ReferTV ]
+authors: [ ReferTV, PTMDev ]
 website: gamesmc.pl
 depend:
   - PlaceholderAPI
