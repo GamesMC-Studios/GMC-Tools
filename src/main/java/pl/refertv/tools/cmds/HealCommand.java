@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
+import pl.refertv.tools.MessagesManager;
 import pl.refertv.tools.Tools;
 
 public class HealCommand extends CommandBase {
@@ -29,7 +30,7 @@ public class HealCommand extends CommandBase {
                 p.playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 2F, 1F);
             }
         } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
         return false;
     }

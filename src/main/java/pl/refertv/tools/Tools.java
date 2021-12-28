@@ -1,18 +1,14 @@
 package pl.refertv.tools;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.refertv.tools.cmds.*;
 import pl.refertv.tools.listeners.Join;
 
 public final class Tools extends JavaPlugin {
 
-    private static Tools instance;;
-
+    private static Tools instance;
     public static Tools getInstance() {
-
         return instance;
     }
 
@@ -33,9 +29,21 @@ public final class Tools extends JavaPlugin {
                 "                                                        §fby " + this.getDescription().getAuthors() + " §a" + this.getDescription().getVersion());
         getLogger().info("Plugin z narzędziami dla administratorów");
 
-        registerCommands();
-
         instance = this;
+
+        registerCommands();
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
+        MessagesManager.setup();
+        MessagesManager.get().addDefault("title", "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•");
+        MessagesManager.get().addDefault("noperms", "§cNie masz uprawnień do wykonania tego polecenia, lub takie polecenie nie istnieje.");
+        MessagesManager.get().addDefault("error", "§cWystąpił niespodziewany błąd.");
+        MessagesManager.get().addDefault("mbp", "§cMusisz być graczem aby wykonać to polecenie");
+        MessagesManager.get().addDefault("arg", "§cPodałeś niepoprawny argument");
+        MessagesManager.get().options().copyDefaults(true);
+        MessagesManager.save();
+
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             Bukkit.getPluginManager().registerEvents(new Join(), this);;

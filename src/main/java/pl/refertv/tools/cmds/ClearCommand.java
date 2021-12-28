@@ -1,9 +1,9 @@
 package pl.refertv.tools.cmds;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
+import pl.refertv.tools.MessagesManager;
 import pl.refertv.tools.Tools;
 
 public class ClearCommand extends CommandBase {
@@ -27,10 +27,10 @@ public class ClearCommand extends CommandBase {
                         p.sendTitle(Tools.gmc, "Wyczysciłeś ekwipunek graczowi §6 " + gracz.getName());
                     }
                 } else {
-                    p.sendMessage(Tools.noperms);
+                    p.sendMessage(MessagesManager.get().getString("noperms"));
                 }
             } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
         return false;
     }

@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Tools;
+import pl.refertv.tools.MessagesManager;
 
 public class SmitchingTableCommand extends CommandBase {
 
@@ -26,10 +26,10 @@ public class SmitchingTableCommand extends CommandBase {
                     gracz.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
                 }
             } else {
-                p.sendMessage(Tools.noperms);
+                p.sendMessage(MessagesManager.get().getString("noperms"));
             }
         } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
         return false;
     }

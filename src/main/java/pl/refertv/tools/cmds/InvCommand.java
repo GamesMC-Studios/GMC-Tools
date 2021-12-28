@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Tools;
+import pl.refertv.tools.MessagesManager;
 
 public class InvCommand extends CommandBase {
 
@@ -26,10 +26,10 @@ public class InvCommand extends CommandBase {
                     p.playSound(gracz.getLocation(), Sound.BLOCK_CHEST_OPEN, 2F, 1F);
                 }
             } else {
-                p.sendMessage(Tools.noperms);
+                p.sendMessage(MessagesManager.get().getString("noperms"));
             }
         } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
         return false;
     }

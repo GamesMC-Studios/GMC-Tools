@@ -1,9 +1,8 @@
 package pl.refertv.tools.cmds;
 
-import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Tools;
+import pl.refertv.tools.MessagesManager;
 
 public class FlySpeedCommand extends CommandBase {
 
@@ -30,7 +29,7 @@ public class FlySpeedCommand extends CommandBase {
             }
             return true;
         } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
         return false;
     }

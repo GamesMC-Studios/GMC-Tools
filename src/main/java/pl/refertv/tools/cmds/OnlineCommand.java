@@ -3,6 +3,7 @@ package pl.refertv.tools.cmds;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
+import pl.refertv.tools.MessagesManager;
 import pl.refertv.tools.Tools;
 
 import java.util.Collection;
@@ -27,7 +28,7 @@ public class OnlineCommand extends CommandBase {
             p.sendTitle(Tools.gmc, "§eAktualnie na serwerze jest: " + players.size() + "/" + Bukkit.getMaxPlayers(), 10, 50, 10);
             return true;
         } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
         return false;
     }

@@ -54,3 +54,5 @@ commands:
   grindstone:
   clear:
   getpos:
+  tools:
+    aliases: [gamesmctools]

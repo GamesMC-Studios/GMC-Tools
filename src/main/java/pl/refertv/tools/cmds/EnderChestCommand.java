@@ -1,11 +1,10 @@
 package pl.refertv.tools.cmds;
 
-import net.kyori.adventure.sound.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Tools;
+import pl.refertv.tools.MessagesManager;
 
 public class EnderChestCommand extends CommandBase {
 
@@ -26,7 +25,7 @@ public class EnderChestCommand extends CommandBase {
                 p.playSound(p.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 2F, 1F);
             }
         } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
 
         return false;

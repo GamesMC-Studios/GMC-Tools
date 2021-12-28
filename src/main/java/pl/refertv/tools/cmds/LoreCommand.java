@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import pl.refertv.tools.MessagesManager;
 import pl.refertv.tools.Tools;
 
 import java.util.Collections;
@@ -34,7 +35,7 @@ public class LoreCommand extends CommandBase {
                 return true;
             }
         } else {
-            p.sendMessage(Tools.noperms);
+            p.sendMessage(MessagesManager.get().getString("noperms"));
         }
         return false;
     }
