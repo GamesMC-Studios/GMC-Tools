@@ -2,7 +2,7 @@ package pl.refertv.tools.cmds;
 
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.MessageManager;
 
 public class MainCommand extends CommandBase {
 
@@ -14,12 +14,11 @@ public class MainCommand extends CommandBase {
         }
         if (p.hasPermission("gamesmc.admin")) {
             if (args[0].equalsIgnoreCase("reload")) {
-                p.sendTitle(MessagesManager.get().getString("title"), "Przeładowałeś pliki konfiguracyjne.");
+                p.sendTitle("e", "Przeładowałeś pliki konfiguracyjne.");
                 p.sendMessage("§7Przeładowałeś pliki konfiguracyjne.");
-                MessagesManager.reload();
             }
         } else {
-            p.sendMessage(MessagesManager.get().getString("noperms"));
+            MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;
     }

@@ -3,7 +3,7 @@ package pl.refertv.tools.cmds;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.MessageManager;
 import pl.refertv.tools.Tools;
 
 public class WeatherCommand extends CommandBase{
@@ -26,7 +26,7 @@ public class WeatherCommand extends CommandBase{
         }
         }
         else {
-            p.sendMessage(MessagesManager.get().getString("noperms"));
+            MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;
     }

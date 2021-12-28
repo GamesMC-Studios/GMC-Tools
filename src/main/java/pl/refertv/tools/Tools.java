@@ -2,12 +2,17 @@ package pl.refertv.tools;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
-import pl.refertv.tools.Config.Config;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.Config.Settings;
 import pl.refertv.tools.cmds.*;
 import pl.refertv.tools.listeners.Join;
 
 public final class Tools extends JavaPlugin {
+
+    private static Settings settings;
+    public static Settings getSettings() {
+        return settings;
+    }
+
 
     private static Tools instance;
     public static Tools getInstance() {
@@ -19,6 +24,14 @@ public final class Tools extends JavaPlugin {
     public static String mbp = "§cMusisz być graczem aby wykonać to polecenie";
     public static String noperms = "§cNie masz uprawnień do wykonania tego polecenia, lub takie polecenie nie istnieje.";
     public static String error = "§cWystąpił nieoczekiwany błąd.";
+
+
+    @Override
+    public void onLoad() {
+        // Set instance for easy cross-class referencing
+        instance = this;
+        settings = new Settings(this);
+    }
 
     @Override
     public void onEnable() {
@@ -34,20 +47,14 @@ public final class Tools extends JavaPlugin {
         instance = this;
 
         registerCommands();
-        getConfig().options().copyDefaults();
+
         saveDefaultConfig();
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+        settings.reload();
 
-        Config.setup();
-        Config.get().addDefault("lang", "en");
-        MessagesManager.setup();
-        MessagesManager.get().addDefault("title", "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•");
-        MessagesManager.get().addDefault("noperms", "§cNie masz uprawnień do wykonania tego polecenia, lub takie polecenie nie istnieje.");
-        MessagesManager.get().addDefault("error", "§cWystąpił niespodziewany błąd.");
-        MessagesManager.get().addDefault("mbp", "§cMusisz być graczem aby wykonać to polecenie");
-        MessagesManager.get().addDefault("arg", "§cPodałeś niepoprawny argument");
-        MessagesManager.get().options().copyDefaults(true);
-        MessagesManager.save();
-
+        // Load the messages (in the right language)
+        MessageManager.loadMessages(Tools.getSettings().getLanguage());
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             Bukkit.getPluginManager().registerEvents(new Join(), this);;

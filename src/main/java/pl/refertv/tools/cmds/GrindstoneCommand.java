@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.MessageManager;
 
 public class GrindstoneCommand extends CommandBase {
 
@@ -26,10 +26,10 @@ public class GrindstoneCommand extends CommandBase {
                     gracz.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
                 }
             } else {
-                p.sendMessage(MessagesManager.get().getString("noperms"));
+                MessageManager.sendMessage(p, "error_no_permission");
             }
         } else {
-            p.sendMessage(MessagesManager.get().getString("noperms"));
+            MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;
     }

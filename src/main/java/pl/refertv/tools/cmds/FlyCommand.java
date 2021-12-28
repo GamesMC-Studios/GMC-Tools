@@ -3,7 +3,7 @@ package pl.refertv.tools.cmds;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.MessageManager;
 import pl.refertv.tools.Tools;
 
 public class FlyCommand extends CommandBase {
@@ -12,7 +12,7 @@ public class FlyCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.fly")) {
             if (args.length > 1) {
-                p.sendTitle(MessagesManager.get().getString("title"), MessagesManager.get().getString("arg"), 10, 10, 10);
+                p.sendTitle("e", "e", 10, 10, 10);
             }
             if (args.length == 0) {
                 if (p.getAllowFlight() == true) {
@@ -46,10 +46,10 @@ public class FlyCommand extends CommandBase {
                 }
             }
             else {
-                p.sendMessage(MessagesManager.get().getString("noperms"));
+                MessageManager.sendMessage(p, "error_no_permission");
             }
         } else {
-            p.sendMessage(MessagesManager.get().getString("noperms"));
+            MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;
     }

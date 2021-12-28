@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.MessageManager;
 import pl.refertv.tools.Tools;
 
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class GamemodeCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.gamemode")) {
             if (args.length == 0 || args.length > 2) {
-                p.sendTitle(MessagesManager.get().getString("title"), MessagesManager.get().getString("arg"), 10, 10, 10);
+                p.sendTitle("", "", 10, 10, 10);
             } else {
                 Player player;
                 if (args.length == 1) {
@@ -53,13 +53,13 @@ public class GamemodeCommand extends CommandBase {
                 player.setGameMode(mode);
 
                 if (player != p) {
-                    p.sendTitle(MessagesManager.get().getString("title"), "Zmieniłeś tryb gry dla §6" + player.getName() + " §fzostał zmieniony na §a" + mode.toString().toLowerCase(), 10, 10, 10);
+                    p.sendTitle("e", "Zmieniłeś tryb gry dla §6" + player.getName() + " §fzostał zmieniony na §a" + mode.toString().toLowerCase(), 10, 10, 10);
                 }
-                player.sendTitle(MessagesManager.get().getString("title"), "Twój tryb gry został zmieniony na §a" + mode.toString().toLowerCase(), 10, 10, 10);
+                player.sendTitle("e", "Twój tryb gry został zmieniony na §a" + mode.toString().toLowerCase(), 10, 10, 10);
             }
             return true;
         } else {
-            p.sendMessage(MessagesManager.get().getString("noperms"));
+            MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;
     }

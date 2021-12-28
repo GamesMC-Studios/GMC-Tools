@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.MessageManager;
 
 public class FoodCommand extends CommandBase {
 
@@ -25,7 +25,7 @@ public class FoodCommand extends CommandBase {
                 p.playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 2F, 1F);
             }
         } else {
-            p.sendMessage(MessagesManager.get().getString("noperms"));
+            MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;
     }

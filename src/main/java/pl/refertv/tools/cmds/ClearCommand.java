@@ -3,7 +3,7 @@ package pl.refertv.tools.cmds;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Config.MessagesManager;
+import pl.refertv.tools.MessageManager;
 import pl.refertv.tools.Tools;
 
 public class ClearCommand extends CommandBase {
@@ -27,10 +27,10 @@ public class ClearCommand extends CommandBase {
                         p.sendTitle(Tools.gmc, "Wyczysciłeś ekwipunek graczowi §6 " + gracz.getName());
                     }
                 } else {
-                    p.sendMessage(MessagesManager.get().getString("noperms"));
+                    MessageManager.sendMessage(p, "error_no_permission");
                 }
             } else {
-            p.sendMessage(MessagesManager.get().getString("noperms"));
+            MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;
     }
