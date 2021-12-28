@@ -2,7 +2,7 @@ package pl.refertv.tools.cmds;
 
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.MessagesManager;
+import pl.refertv.tools.Config.MessagesManager;
 
 public class MainCommand extends CommandBase {
 

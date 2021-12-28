@@ -1,4 +1,4 @@
-package pl.refertv.tools;
+package pl.refertv.tools.Config;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -7,20 +7,19 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class MessagesManager {
+public class Config {
 
     private static File file;
     private static FileConfiguration customFile;
 
     //Finds or generates the custom config file
     public static void setup(){
-        file = new File(Bukkit.getServer().getPluginManager().getPlugin("GamesMC_Tools").getDataFolder(), "messages.yml");
+        file = new File(Bukkit.getServer().getPluginManager().getPlugin("GamesMC_Tools").getDataFolder(), "config.yml");
 
         if (!file.exists()){
             try{
                 file.createNewFile();
             }catch (IOException e){
-                //owww
             }
         }
         customFile = YamlConfiguration.loadConfiguration(file);

@@ -3,7 +3,7 @@ package pl.refertv.tools.cmds;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.MessagesManager;
+import pl.refertv.tools.Config.MessagesManager;
 import pl.refertv.tools.Tools;
 
 import java.util.Collection;

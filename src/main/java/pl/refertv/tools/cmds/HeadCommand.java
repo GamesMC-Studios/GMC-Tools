@@ -6,7 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
-import pl.refertv.tools.MessagesManager;
+import pl.refertv.tools.Config.MessagesManager;
 import pl.refertv.tools.Tools;
 
 public class HeadCommand extends CommandBase {

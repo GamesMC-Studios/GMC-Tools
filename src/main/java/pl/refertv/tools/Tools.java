@@ -2,6 +2,8 @@ package pl.refertv.tools;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.refertv.tools.Config.Config;
+import pl.refertv.tools.Config.MessagesManager;
 import pl.refertv.tools.cmds.*;
 import pl.refertv.tools.listeners.Join;
 
@@ -35,6 +37,8 @@ public final class Tools extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
+        Config.setup();
+        Config.get().addDefault("lang", "en");
         MessagesManager.setup();
         MessagesManager.get().addDefault("title", "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•");
         MessagesManager.get().addDefault("noperms", "§cNie masz uprawnień do wykonania tego polecenia, lub takie polecenie nie istnieje.");

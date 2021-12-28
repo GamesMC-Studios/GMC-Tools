@@ -4,8 +4,6 @@ import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.Objects;
 
 public abstract class CommandBase implements CommandExecutor {
