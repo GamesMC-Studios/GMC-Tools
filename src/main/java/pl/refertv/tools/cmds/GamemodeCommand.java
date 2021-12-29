@@ -1,5 +1,7 @@
 package pl.refertv.tools.cmds;
 
+import de.themoep.minedown.MineDown;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -29,7 +31,8 @@ public class GamemodeCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.gamemode")) {
             if (args.length == 0 || args.length > 2) {
-                p.sendTitle("", "", 10, 10, 10);
+                p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("arguments")).toComponent()), 20, 60, 20);
+                return true;
             } else {
                 Player player;
                 if (args.length == 1) {
@@ -41,7 +44,7 @@ public class GamemodeCommand extends CommandBase {
                 } else {
                     player = Bukkit.getPlayer(args[1]);
                     if (player == null) {
-                        p.sendTitle(Tools.gmc, "Ten gracz jest offline", 10, 10, 10);
+                        p.sendTitle("", TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_offline")).toComponent()), 20, 60, 20);
                         return true;
                     }
                 }
@@ -53,9 +56,9 @@ public class GamemodeCommand extends CommandBase {
                 player.setGameMode(mode);
 
                 if (player != p) {
-                    p.sendTitle("e", "Zmieniłeś tryb gry dla §6" + player.getName() + " §fzostał zmieniony na §a" + mode.toString().toLowerCase(), 10, 10, 10);
+                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), "", 20, 60, 20);
                 }
-                player.sendTitle("e", "Twój tryb gry został zmieniony na §a" + mode.toString().toLowerCase(), 10, 10, 10);
+                p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("gamemode_change") + mode.toString().toLowerCase()).toComponent()), 20, 60, 20);
             }
             return true;
         } else {

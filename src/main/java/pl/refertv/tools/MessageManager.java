@@ -8,7 +8,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import pl.refertv.tools.Tools;
 
 import java.io.File;
 import java.io.IOException;
@@ -58,8 +57,12 @@ public class MessageManager {
         }
         FileConfiguration config = loadConfiguration(f);
         config.options().header(
-                """     
-                            Developed by ReferTV 
+                """
+                  ____                               __  __   ____   _____                _      \s
+                 / ___|  __ _  _ __ ___    ___  ___ |  \\/  | / ___| |_   _|  ___    ___  | | ___ \s
+                | |  _  / _` || '_ ` _ \\  / _ \\/ __|| |\\/| || |       | |   / _ \\  / _ \\ | |/ __|\s
+                | |_| || (_| || | | | | ||  __/\\__ \\| |  | || |___    | |  | (_) || (_) || |\\__ \\\s
+                 \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\s    
                                                                     """);
         InputStream defaultMessageFile = plugin.getResource("languages/" + language + ".yml");
         if (defaultMessageFile != null) {
@@ -84,6 +87,10 @@ public class MessageManager {
         sendMessage(p, ChatMessageType.ACTION_BAR, messageID, placeholderReplacements);
     }
 
+    public static void sendTitle (Player p, String messageID, String... placeholderReplacements) {
+        sendTitle(p, messageID);
+    }
+
     // Send a message to the correct channel
     private static void sendMessage(Player p, ChatMessageType chatMessageType, String messageID, String... placeholderReplacements) {
         String message = getRawMessage(messageID);
@@ -103,7 +110,7 @@ public class MessageManager {
         }
 
         // Convert to baseComponents[] via MineDown formatting and send
-        p.spigot().sendMessage(chatMessageType, new MineDown(message).replace().toComponent());
+        p.spigot().sendMessage(new MineDown(message).replace().toComponent());
     }
 
     // Send a message with no placeholder parameters
