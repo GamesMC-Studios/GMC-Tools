@@ -31,7 +31,7 @@ public class GamemodeCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.gamemode")) {
             if (args.length == 0 || args.length > 2) {
-                p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("arguments")).toComponent()), 20, 60, 20);
+                p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("not_enough_arguments")).toComponent()), 20, 60, 20);
                 return true;
             } else {
                 Player player;
@@ -44,19 +44,19 @@ public class GamemodeCommand extends CommandBase {
                 } else {
                     player = Bukkit.getPlayer(args[1]);
                     if (player == null) {
-                        p.sendTitle("", TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_offline")).toComponent()), 20, 60, 20);
+                        MessageManager.sendMessage(p, "player_offline");
                         return true;
                     }
                 }
                 if (!gm.containsKey(args[0])) {
-                    p.sendTitle(Tools.gmc, Tools.arg, 10, 10, 10);
+                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("invaild_argument")).toComponent()), 20, 60, 20);
                     return true;
                 }
                 GameMode mode = gm.get(args[0]);
                 player.setGameMode(mode);
 
                 if (player != p) {
-                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), "", 20, 60, 20);
+                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("gamemode_change") + mode.toString().toLowerCase()).toComponent()) + "by" + p.getName(), 20, 60, 20);
                 }
                 p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("gamemode_change") + mode.toString().toLowerCase()).toComponent()), 20, 60, 20);
             }

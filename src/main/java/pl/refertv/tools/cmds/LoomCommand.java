@@ -19,7 +19,7 @@ public class LoomCommand extends CommandBase {
                 if (args.length == 1) {
                     Player gracz = Bukkit.getPlayer(args[0]);
                     if (gracz == null) {
-                        p.sendMessage("§cGracz " + args[0] + " nie jest online!");
+                        MessageManager.sendMessage(p, "player_offline");
                         return false;
                     }
                     gracz.openLoom(null, true);

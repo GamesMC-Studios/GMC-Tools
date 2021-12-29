@@ -19,7 +19,7 @@ public class InvCommand extends CommandBase {
                 if (args.length == 1) {
                     Player gracz = Bukkit.getPlayer(args[0]);
                     if (gracz == null) {
-                        p.sendMessage("§cGracz " + args[0] + " jest offline!");
+                        MessageManager.sendMessage(p, "player_offline");
                         return false;
                     }
                     p.openInventory(gracz.getInventory());

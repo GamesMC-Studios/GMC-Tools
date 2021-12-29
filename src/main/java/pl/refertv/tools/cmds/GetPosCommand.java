@@ -17,7 +17,7 @@ public class GetPosCommand extends CommandBase {
                 if (args.length == 1) {
                     Player gracz = Bukkit.getPlayer(args[0]);
                     if (gracz == null) {
-                        p.sendMessage("§cGracz " + args[0] + " nie jest online!");
+                        MessageManager.sendMessage(p, "player_offline");
                         return false;
                     }
                     p.sendMessage("§8» §fLokalizacja gracza §6" + gracz.getName() + "\n§7X: §b" + gracz.getLocation().getX() + "\n§7Y: §b" + gracz.getLocation().getY() + "\n§7Z: §b" + +gracz.getLocation().getZ());
