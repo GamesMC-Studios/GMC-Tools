@@ -1,5 +1,8 @@
 package pl.refertv.tools.cmds;
 
+import de.themoep.minedown.MineDown;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
@@ -16,7 +19,6 @@ public class OnlineCommand extends CommandBase {
             StringBuilder online = new StringBuilder();
             final Collection<? extends Player> players = Bukkit.getOnlinePlayers();
             for (Player player : players) {
-                // If a player is hidden from the sender don't show them in the list
                 if (p instanceof Player && !((Player) p).canSee(player))
                     continue;
                 if (online.length() > 0) {
@@ -24,8 +26,10 @@ public class OnlineCommand extends CommandBase {
                 }
                 online.append(player.getDisplayName());
             }
-            p.sendMessage("§fAktualnie na serwerze jest §e" + players.size() + "/" + Bukkit.getMaxPlayers() + " §fgraczy online.§7\n" + online.toString());
-            p.sendTitle(Tools.gmc, "§eAktualnie na serwerze jest: " + players.size() + "/" + Bukkit.getMaxPlayers(), 10, 50, 10);
+            Integer playersonline = players.size();
+            Integer maxplayers = Bukkit.getMaxPlayers();
+            MessageManager.sendMessage(p, "online_list", playersonline.toString(), maxplayers.toString(), online.toString());
+            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("online", playersonline.toString(), maxplayers.toString())).toComponent()));
             return true;
         } else {
             MessageManager.sendMessage(p, "error_no_permission");

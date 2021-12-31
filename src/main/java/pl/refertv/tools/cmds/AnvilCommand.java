@@ -14,20 +14,22 @@ public class AnvilCommand extends CommandBase {
         if (p.hasPermission("gamesmc.anvil")) {
             if (args.length == 0) {
                 p.openAnvil(null, true);
-                p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
+                p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 1F);
             }
-            if (p.hasPermission("gamesmc.anvil.others")) {
-                if (args.length == 1) {
+            if (args.length == 1) {
+                if (p.hasPermission("gamesmc.anvil.others")) {
                     Player gracz = Bukkit.getPlayer(args[0]);
                     if (gracz == null) {
                         MessageManager.sendMessage(p, "player_offline");
                         return false;
                     }
                     gracz.openAnvil(null, true);
-                    gracz.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
-                }
-            } else {
-                p.sendMessage(Tools.noperms);
+                    gracz.playSound(gracz.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 1F);
+                } else {
+                    MessageManager.sendMessage(p, "error_no_permission"); }
+            }
+            if (args.length > 1) {
+                MessageManager.sendMessage(p, "too_many_arguments");
             }
         } else {
             MessageManager.sendMessage(p, "error_no_permission");

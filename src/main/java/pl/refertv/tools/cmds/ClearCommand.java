@@ -1,5 +1,7 @@
 package pl.refertv.tools.cmds;
 
+import de.themoep.minedown.MineDown;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
@@ -13,7 +15,7 @@ public class ClearCommand extends CommandBase {
         if (p.hasPermission("gamesmc.clear")) {
             if (args.length == 0) {
                     p.getInventory().clear();
-                    p.sendTitle(Tools.gmc, "Twój ekwipunek został wyczyszczony");
+                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("equipment_clear")).toComponent()), 20, 60, 20);
                 }
                 if (p.hasPermission("gamesmc.clear.others")) {
                     if (args.length == 1) {
@@ -23,8 +25,8 @@ public class ClearCommand extends CommandBase {
                             return false;
                         }
                         gracz.getInventory().clear();
-                        gracz.sendTitle(Tools.gmc, "Twój ekwipunek został przez §6" + p.getName());
-                        p.sendTitle(Tools.gmc, "Wyczysciłeś ekwipunek graczowi §6 " + gracz.getName());
+                        gracz.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("equipment_clear") + p.getName()).toComponent()), 20, 60, 20);
+                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("equipment_clear_player") + p.getName()).toComponent()), 20, 60, 20);
                     }
                 } else {
                     MessageManager.sendMessage(p, "error_no_permission");

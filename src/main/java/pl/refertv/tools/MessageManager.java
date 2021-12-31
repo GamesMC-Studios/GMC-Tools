@@ -62,8 +62,11 @@ public class MessageManager {
                  / ___|  __ _  _ __ ___    ___  ___ |  \\/  | / ___| |_   _|  ___    ___  | | ___ \s
                 | |  _  / _` || '_ ` _ \\  / _ \\/ __|| |\\/| || |       | |   / _ \\  / _ \\ | |/ __|\s
                 | |_| || (_| || | | | | ||  __/\\__ \\| |  | || |___    | |  | (_) || (_) || |\\__ \\\s
-                 \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\s    
-                                                                    """);
+                 \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\s
+                                                                                       by ReferTV\s
+                This plugin use a Minedown formatting, read more about it here: https://github.com/Phoenix616/MineDown\s
+                If you want to help with plugin translate please send translation to my discord ReferTV#1770\s
+                or open Pull Request on GitHub: https://github.com/GamesMC-Studios/GMC-Tools/pulls  \s                                                  """);
         InputStream defaultMessageFile = plugin.getResource("languages/" + language + ".yml");
         if (defaultMessageFile != null) {
             YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(new InputStreamReader(defaultMessageFile, StandardCharsets.UTF_8));
@@ -85,10 +88,6 @@ public class MessageManager {
     // Send a message with multiple placeholders
     public static void sendActionBar(Player p, String messageID, String... placeholderReplacements) {
         sendMessage(p, ChatMessageType.ACTION_BAR, messageID, placeholderReplacements);
-    }
-
-    public static void sendTitle (Player p, String messageID, String... placeholderReplacements) {
-        sendTitle(p, messageID);
     }
 
     // Send a message to the correct channel

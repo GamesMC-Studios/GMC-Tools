@@ -1,9 +1,49 @@
 
-title: '§8•● §6☆ Games§fMC§e.pl §6☆ §8●•'
+title: '&8•● &6☆ Games&fMC&e.pl &6☆ &8●•'
 error_no_permission: '[Błąd:](#ff3300) [Nie masz uprawnień do wykoanania tego polecenia.](#ff7e5e)'
-player_offline: '&#ff3300-#ff7e5e&Podany gracz jest offline'
-not_enough_arguments: '&#ff3300-#ff7e5e&Podałeś za mało argumentów'
-invaild_argument: '&#ff3300-#ff7e5e&Podałeś niepoprawny argument'
-by: '&#DAC3C3&przez'
+player_offline: '[Wygląda na to, że podany gracz jest offline.](#ff7e5e)'
+not_enough_arguments: '[Podałeś za mało argumentów](#ff7e5e)'
+too_many_arguments: '[Podałeś za dużo argumentów](#ff7e5e)'
+invaild_argument: '[Upewnij się czy wpisane argumenty są poprawne](#ff7e5e)'
+invaild_nickname: '[Nick może składać się tylko z liter oraz cyfr oraz podkreślników.](#ff7e5e)'
+provide_int: '[Proszę podaj wartość, która będzie liczbą całkowitą.](#ff7e5e)'
+invalid_syntax: '[Niepoprawna składnia, użyj %1%.](#ff7e5e)'
 
-gamemode_change: '&#DAC3C3-#837F7F&Twój tryb gry został zmieniony na &a'
+provide_player_name: 'Musisz podać nazwę użytkownika'
+get_player_head: '[Otrzymałeś głowę gracza](#00fb9a) [%1%](#00fb9a)'
+enable: '&cwyłączony'
+disable: '&awłączony'
+gamemode_change: 'Twój tryb gry został zmieniony na %1%'
+equipment_clear: 'Twój ekwipunek został wyczyszczony'
+equipment_clear_player: 'Wyczyściłeś ekwipunek graczowi '
+
+fly: '[Tryb latania został %1%](#00fb9a)'
+fly_change_by: '[Tryb latania został %1% przez %2%](#00fb9a)'
+player_change_fly: '[Tryb latania dla gracza %2% został %1%](#00fb9a)'
+fly_speed: '[Prędkość latania została ustawiona na %1%](#ff7e5e)'
+walk_speed: '[Prędkość chodzenia została ustawiona na %1%](#ff7e5e)'
+
+location: '[Lokalizacja gracza %1%](#00fb9a)'
+
+time_lock: '[Czas na serwerze został zablokowany](#00fb9a)'
+time_unlock: '[Czas na serwerze został odblokowany](#00fb9a)'
+time_day: '[Czas na serwerze został ustawiony na dzień](#00fb9a)'
+time_night: '[Czas na serwerze został zmieniony na noc](#00fb9a)'
+
+weather_rain: '[Pogoda została zmieniona na deszczową](#00fb9a)'
+weather_thunder: '[Pogoda została zmieniona na burzę](#00fb9a)'
+weather_clear: '[Pogoda została zmieniona na bezchmurną](#00fb9a)'
+
+cannot_be_air: '[Musisz trzymać jakiś przedmiot w ręku.](#ff7e5e)'
+item_name: '[Pomyślnie zmieniłeś nazwę przedmiotu na %1%.](#ff7e5e)'
+item_lore: '[Pomyślnie zmieniłeś opis przedmiotu na %1%.](#ff7e5e)'
+item_in_hand: '[Musisz trzymać jakiś item w ręku.](#ff7e5e)'
+
+online: '&fAktualnie na serwerze jest §e%1%/%2% &fgraczy online.'
+online_list: '&fAktualnie na serwerze jest §e%1%/%2% &fgraczy online. &aLista graczy: %3%'
+
+food: '[Twój poziom nasycenia został wypełniony.](#ff7e5e)'
+food_by_player: '[Twój poziom nasycenia został wypełniony przez %1%.](#ff7e5e)'
+
+heal: '[Zostałeś uleczony.](#ff7e5e)'
+heal_by_player: '[Zostałeś uleczony przez %1%.](#ff7e5e)'

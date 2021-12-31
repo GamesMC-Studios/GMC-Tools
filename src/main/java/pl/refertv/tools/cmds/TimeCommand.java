@@ -1,5 +1,7 @@
 package pl.refertv.tools.cmds;
 
+import de.themoep.minedown.MineDown;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
 import org.bukkit.command.Command;
@@ -13,21 +15,29 @@ public class TimeCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.czas")) {
             if (args.length == 0) {
-                p.sendTitle(Tools.gmc, Tools.arg);
-                return true; }
-            { if (args[0].equalsIgnoreCase("dzień") || (args[0].equalsIgnoreCase("day"))) {
-                p.getWorld().setTime(6000);
-                Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(Tools.gmc, " Czas został zmieniony na §edzień §fprzez administratora §6" + p.getName()));
-            } if (args[0].equalsIgnoreCase("noc") || args[0].equalsIgnoreCase("night")) {
-                p.getWorld().setTime(18000);
-                Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(Tools.gmc, "Czas został zmieniony na §8noc §fprzez administratora §6" + p.getName()));
-            } if (args[0].equalsIgnoreCase("zatrzymaj") || (args[0].equalsIgnoreCase("lock"))) {
-                p.getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
-                Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(Tools.gmc, "Czas został zatrzymany §fprzez administratora §6" + p.getName()));
-            } if (args[0].equalsIgnoreCase("wznów") || (args[0].equalsIgnoreCase("unlock"))) {
-                p.getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
-                Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(Tools.gmc, "Czas został wznowiony §fprzez administratora §6" + p.getName()));
+                p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("invaild_argument")).toComponent()), 20, 60, 20);
+                return true;
             }
+            switch (args[0]) {
+                case "dzień", "day" -> {
+                    p.getWorld().setTime(6000);
+                    Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("time_day")).toComponent()), 20, 60, 20));
+                }
+                case "noc", "night" -> {
+                    p.getWorld().setTime(18000);
+                    Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("time_night")).toComponent()), 20, 60, 20));
+                }
+                case "zatrzymaj", "lock" -> {
+                    Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("time_lock")).toComponent()), 20, 60, 20));
+                    p.getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
+                }
+                case "wznów", "unlock" -> {
+                    Bukkit.getOnlinePlayers().forEach(player -> player.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("time_unlock")).toComponent()), 20, 60, 20));
+                    p.getWorld().setGameRule(GameRule.DO_DAYLIGHT_CYCLE, true);
+                }
+                default -> {
+                    MessageManager.sendMessage(p, "invaild_argument");
+                }
             }
         } else {
             MessageManager.sendMessage(p, "error_no_permission");

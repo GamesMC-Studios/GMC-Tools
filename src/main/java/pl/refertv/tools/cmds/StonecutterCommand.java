@@ -13,20 +13,20 @@ public class StonecutterCommand extends CommandBase {
         if (p.hasPermission("gamesmc.stonecutter")) {
             if (args.length == 0) {
                 p.openStonecutter(null, true);
-                p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
             }
-            if (p.hasPermission("gamesmc.stonecutter.others")) {
-                if (args.length == 1) {
+            if (args.length == 1) {
+                if (p.hasPermission("gamesmc.stonecutter.others")) {
                     Player gracz = Bukkit.getPlayer(args[0]);
                     if (gracz == null) {
                         MessageManager.sendMessage(p, "player_offline");
                         return false;
                     }
                     gracz.openStonecutter(null, true);
-                    gracz.playSound(p.getLocation(), Sound.BLOCK_ANVIL_PLACE, 2F, 2F);
-                }
-            } else {
-                MessageManager.sendMessage(p, "error_no_permission");
+                } else {
+                    MessageManager.sendMessage(p, "error_no_permission"); }
+            }
+            if (args.length > 1) {
+                MessageManager.sendMessage(p, "too_many_arguments");
             }
         } else {
             MessageManager.sendMessage(p, "error_no_permission");

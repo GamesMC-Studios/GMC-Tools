@@ -71,9 +71,8 @@ public final class Tools extends JavaPlugin {
         this.getCommand("fly").setExecutor(new FlyCommand());
         this.getCommand("online").setExecutor(new OnlineCommand());
         this.getCommand("head").setExecutor(new HeadCommand());
-        this.getCommand("rename").setExecutor(new RenameCommand());
-        this.getCommand("lore").setExecutor(new LoreCommand());
-        this.getCommand("speed").setExecutor(new FlySpeedCommand());
+        this.getCommand("item").setExecutor(new ItemCommand());
+        this.getCommand("speed").setExecutor(new SpeedCommand());
         this.getCommand("heal").setExecutor(new HealCommand());
         this.getCommand("food").setExecutor(new FoodCommand());
         this.getCommand("time").setExecutor(new TimeCommand());
@@ -85,10 +84,11 @@ public final class Tools extends JavaPlugin {
         this.getCommand("grindstone").setExecutor(new GrindstoneCommand());
         this.getCommand("loom").setExecutor(new LoomCommand());
         this.getCommand("cartographytable").setExecutor(new CartographyTableCommand());
-        this.getCommand("smitchingtable").setExecutor(new SmitchingTableCommand());
+        this.getCommand("smithingtable").setExecutor(new SmithingTableCommand());
         this.getCommand("stonecutter").setExecutor(new StonecutterCommand());
         this.getCommand("clear").setExecutor(new ClearCommand());
         this.getCommand("getpos").setExecutor(new GetPosCommand());
+        this.getCommand("tools").setExecutor(new MainCommand());
 
     }
 

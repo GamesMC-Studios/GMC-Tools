@@ -11,7 +11,8 @@ public class GetPosCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.getpos")) {
             if (args.length == 0) {
-                p.sendMessage("§8» §fTwoja lokalizacja§6: \n§7X: §b" + p.getLocation().getX() + "\n§7Y: §b" + p.getLocation().getY() + "\n§7Z: §b" + +p.getLocation().getZ());
+                MessageManager.sendMessage(p,"location", p.getName());
+                p.sendMessage("\n§7X: §b" + p.getLocation().getX() + "\n§7Y: §b" + p.getLocation().getY() + "\n§7Z: §b" + p.getLocation().getZ());
             }
             if (p.hasPermission("gamesmc.getpos.others")) {
                 if (args.length == 1) {
@@ -20,7 +21,8 @@ public class GetPosCommand extends CommandBase {
                         MessageManager.sendMessage(p, "player_offline");
                         return false;
                     }
-                    p.sendMessage("§8» §fLokalizacja gracza §6" + gracz.getName() + "\n§7X: §b" + gracz.getLocation().getX() + "\n§7Y: §b" + gracz.getLocation().getY() + "\n§7Z: §b" + +gracz.getLocation().getZ());
+                    MessageManager.sendMessage(p, "location", gracz.getName());
+                    p.sendMessage("\n§7X: §b" + gracz.getLocation().getX() + "\n§7Y: §b" + gracz.getLocation().getY() + "\n§7Z: §b" + gracz.getLocation().getZ());
 
                 }
             } else {
