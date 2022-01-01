@@ -6,10 +6,9 @@ description: Plugin z narzędziami dla administratora.
 prefix: GamesMC Tools
 authors: [ ReferTV ]
 website: gamesmc.pl
-depend:
-  - PlaceholderAPI
 softdepend:
   - Vault
+  - PlaceholderAPI
 
 commands:
   gamemode:
