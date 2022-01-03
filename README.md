@@ -1,6 +1,6 @@
 # GMC-Tools
 
-[![Downloads](https://img.shields.io/github/downloads/GamesMC-Studios/GMC-Tools/total?label=DOWNLOADS&style=for-the-badge)](https://www.gamesmc.pl)
+[![Downloads](https://img.shields.io/github/downloads/GamesMC-Studios/GMC-Tools/total?label=DOWNLOADS&style=for-the-badge)](https://github.com/GamesMC-Studios/GMC-Tools/releases)
 [![Discord](https://img.shields.io/discord/917099068457615500?label=SUPPORT&logo=DISCORD&style=for-the-badge)](https://discord.gg/tVbEpRwFjC)
 
 This plugin is temporarily not intended to be used for production-type servers.
