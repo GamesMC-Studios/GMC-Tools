@@ -4,6 +4,7 @@ import org.bukkit.command.*;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
 import java.util.Objects;
 
 public abstract class CommandBase implements CommandExecutor {
@@ -15,13 +16,7 @@ public abstract class CommandBase implements CommandExecutor {
         }
         return false;
     }
-
     protected abstract boolean onCommand(Player p, Command cmd, String label, String[] args);
-
-    /**
-     * Register base for bukkit command
-     * @param command Command for registration
-     */
     public PluginCommand register(PluginCommand command) {
         Objects.requireNonNull(command);
         command.setExecutor(this);
@@ -30,5 +25,4 @@ public abstract class CommandBase implements CommandExecutor {
         }
         return command;
     }
-
 }

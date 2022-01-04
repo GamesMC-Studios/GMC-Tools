@@ -8,6 +8,8 @@ invaild_argument: '[Upewnij się czy wpisane argumenty są poprawne](#ff7e5e)'
 invaild_nickname: '[Nick może składać się tylko z liter oraz cyfr oraz podkreślników.](#ff7e5e)'
 provide_int: '[Proszę podaj wartość, która będzie liczbą całkowitą.](#ff7e5e)'
 invalid_syntax: '[Niepoprawna składnia, użyj %1%.](#ff7e5e)'
+argument_must_be_int: '[Argument musi być liczbą całkowitą.](#ff7e5e)'
+set_max_players: '[Ustawiłeś limit graczy na serwerze na %1%.](#ff7e5e)'
 
 provide_player_name: 'Musisz podać nazwę użytkownika'
 get_player_head: '[Otrzymałeś głowę gracza](#00fb9a) [%1%](#00fb9a)'
@@ -47,3 +49,6 @@ food_by_player: '[Twój poziom nasycenia został wypełniony przez %1%.](#ff7e5e
 
 heal: '[Zostałeś uleczony.](#ff7e5e)'
 heal_by_player: '[Zostałeś uleczony przez %1%.](#ff7e5e)'
+
+hat_was_set: '[Twój kapelusz został zmieniony.](#ff7e5e)'
+cannot_be_more_than_one: '[Liczba przedmiotów nie może być większa niż jeden.](#ff7e5e)'

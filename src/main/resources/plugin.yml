@@ -54,3 +54,6 @@ commands:
   getpos:
   tools:
     aliases: [gamesmctools]
+  hat:
+  slots:
+    aliases: [setslots, sloty, ustawsloty]

@@ -1,6 +1,7 @@
 package pl.refertv.tools;
 
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.refertv.tools.Config.Settings;
 import pl.refertv.tools.cmds.*;
@@ -24,7 +25,7 @@ public final class Tools extends JavaPlugin {
     public static String mbp = "§cMusisz być graczem aby wykonać to polecenie";
     public static String noperms = "§cNie masz uprawnień do wykonania tego polecenia, lub takie polecenie nie istnieje.";
     public static String error = "§cWystąpił nieoczekiwany błąd.";
-
+    
 
     @Override
     public void onLoad() {
@@ -53,15 +54,13 @@ public final class Tools extends JavaPlugin {
         saveConfig();
         settings.reload();
 
-        // Load the messages (in the right language)
         MessageManager.loadMessages(Tools.getSettings().getLanguage());
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-            Bukkit.getPluginManager().registerEvents(new Join(), this);;
+            Bukkit.getPluginManager().registerEvents(new Join(), this);
             getLogger().info("Ładuję listenery...");
         } else {
-            getLogger().info("Nie mogę znaleźć PlaceholderAPI, zainstaluj ten plugin na serwerze.");
-            Bukkit.getPluginManager().disablePlugin(this);
+            getLogger().info("Nie mogę znaleźć PlaceholderAPI, zainstaluj ten plugin na serwerze.\nPlaceholdery w niektórych wiadomościach mogą nie działać.");
         }
     }
 
@@ -88,7 +87,9 @@ public final class Tools extends JavaPlugin {
         this.getCommand("stonecutter").setExecutor(new StonecutterCommand());
         this.getCommand("clear").setExecutor(new ClearCommand());
         this.getCommand("getpos").setExecutor(new GetPosCommand());
+        this.getCommand("hat").setExecutor(new HatCommand());
         this.getCommand("tools").setExecutor(new MainCommand());
+        this.getCommand("slots").setExecutor(new SlotsCommand());
 
     }
 

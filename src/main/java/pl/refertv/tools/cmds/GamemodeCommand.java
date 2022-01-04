@@ -5,14 +5,20 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
+import org.bukkit.util.StringUtil;
 import pl.refertv.tools.MessageManager;
 import pl.refertv.tools.Tools;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class GamemodeCommand extends CommandBase {
+
+    private static final Tools plugin = Tools.getInstance();
 
     private Map<String, GameMode> gm = new HashMap<>();
 
@@ -54,7 +60,6 @@ public class GamemodeCommand extends CommandBase {
                 }
                 GameMode mode = gm.get(args[0]);
                 player.setGameMode(mode);
-
                 if (player != p) {
                     p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("gamemode_change", mode.toString().toLowerCase())).toComponent()), 20, 60, 20);
                 }
@@ -66,4 +71,5 @@ public class GamemodeCommand extends CommandBase {
         }
         return false;
     }
+
 }

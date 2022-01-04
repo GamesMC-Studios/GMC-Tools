@@ -1,1 +1,3 @@
-language: pl
+general:
+ language: pl
+ join_listener: true

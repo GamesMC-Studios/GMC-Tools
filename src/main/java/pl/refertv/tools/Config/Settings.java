@@ -7,12 +7,12 @@ public class Settings {
 
     private final Plugin plugin;
     private String language;
+    private boolean join_listener;
 
     public Settings(Plugin plugin) {
         this.plugin = plugin;
     }
 
-    // (Re-)Load the config file
     public void reload() {
         plugin.reloadConfig();
         reloadFromFile(plugin.getConfig());
@@ -20,7 +20,8 @@ public class Settings {
 
     public void reloadFromFile(FileConfiguration config) {
         try {
-            this.language = config.getString("language", "pl");
+            this.language = config.getString("general.language", "pl");
+            this.join_listener = config.getBoolean("general.join_listener", true);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -28,4 +29,5 @@ public class Settings {
     public String getLanguage() {
         return language;
     }
+    public boolean getJoinListener() { return join_listener; }
 }
