@@ -18,7 +18,6 @@ public class FoodCommand extends CommandBase {
         if (p.hasPermission("gamesmc.food")) {
             if (args.length == 0) {
                 p.setFoodLevel(20);
-                p.sendTitle(Tools.gmc, "Nakarmiłeś się");
                 p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("food")).toComponent()), 20, 60, 20);
             }
             if (args.length == 1) {

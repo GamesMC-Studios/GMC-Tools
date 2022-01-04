@@ -43,7 +43,7 @@ public class GamemodeCommand extends CommandBase {
                 Player player;
                 if (args.length == 1) {
                     if (!(p instanceof Player)) {
-                        p.sendMessage(Tools.mbp);
+                        p.sendMessage("Nie możesz być konsolą");
                         return true;
                     }
                     player = ((Player) p);

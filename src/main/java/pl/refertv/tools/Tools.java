@@ -20,16 +20,8 @@ public final class Tools extends JavaPlugin {
         return instance;
     }
 
-    public static String gmc = "§8•● §6☆ Games§fMC§e.pl §6☆ §8●•";
-    public static String arg = "§cPodałeś niepoprawny argument";
-    public static String mbp = "§cMusisz być graczem aby wykonać to polecenie";
-    public static String noperms = "§cNie masz uprawnień do wykonania tego polecenia, lub takie polecenie nie istnieje.";
-    public static String error = "§cWystąpił nieoczekiwany błąd.";
-    
-
     @Override
     public void onLoad() {
-        // Set instance for easy cross-class referencing
         instance = this;
         settings = new Settings(this);
     }

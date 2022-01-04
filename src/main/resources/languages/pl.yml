@@ -1,5 +1,6 @@
 
 title: '&8•● &6☆ Games&fMC&e.pl &6☆ &8●•'
+welcome_in_server: '[Witaj na serwerze %1%.](#ff7e5e)'
 error_no_permission: '[Błąd:](#ff3300) [Nie masz uprawnień do wykoanania tego polecenia.](#ff7e5e)'
 player_offline: '[Wygląda na to, że podany gracz jest offline.](#ff7e5e)'
 not_enough_arguments: '[Podałeś za mało argumentów](#ff7e5e)'
