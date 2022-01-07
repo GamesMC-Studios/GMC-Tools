@@ -17,6 +17,7 @@ get_player_head: '[Otrzymałeś głowę gracza](#00fb9a) [%1%](#00fb9a)'
 enable: '&cwyłączony'
 disable: '&awłączony'
 gamemode_change: 'Twój tryb gry został zmieniony na %1%'
+gamemode_change_by: 'Twój tryb gry został zmieniony na %1% przez %2%'
 equipment_clear: 'Twój ekwipunek został wyczyszczony'
 equipment_clear_player: 'Wyczyściłeś ekwipunek graczowi '
 

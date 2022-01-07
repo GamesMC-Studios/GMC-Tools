@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import pl.refertv.tools.Config.Settings;
 import pl.refertv.tools.cmds.*;
 import pl.refertv.tools.listeners.Join;
+import pl.refertv.tools.listeners.Leave;
 
 public final class Tools extends JavaPlugin {
 
@@ -50,6 +51,7 @@ public final class Tools extends JavaPlugin {
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             Bukkit.getPluginManager().registerEvents(new Join(), this);
+            Bukkit.getPluginManager().registerEvents(new Leave(), this);
             getLogger().info("Ładuję listenery...");
         } else {
             getLogger().info("Nie mogę znaleźć PlaceholderAPI, zainstaluj ten plugin na serwerze.\nPlaceholdery w niektórych wiadomościach mogą nie działać.");
