@@ -1,3 +1,4 @@
 general:
  language: pl
  join_listener: true
+ quit_listener: true
