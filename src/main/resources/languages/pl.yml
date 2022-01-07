@@ -54,3 +54,6 @@ heal_by_player: '[Zostałeś uleczony przez %1%.](#ff7e5e)'
 
 hat_was_set: '[Twój kapelusz został zmieniony.](#ff7e5e)'
 cannot_be_more_than_one: '[Liczba przedmiotów nie może być większa niż jeden.](#ff7e5e)'
+
+join_message_sponsor: '\n&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fwszedł na serwer!\n'
+join_message_ranks: '&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fwszedł na serwer!'
