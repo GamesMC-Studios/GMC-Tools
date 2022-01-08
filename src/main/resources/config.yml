@@ -1,4 +1,5 @@
 general:
- language: pl
+ #Avaliable languages: pl (Polish), en (English), de (German)
+ language: en
  join_listener: true
  quit_listener: true
