@@ -1,0 +1,58 @@
+title: '&8•● &6☆ Games&fMC&e.pl &6☆ &8●•'
+welcome_in_server: '[Bienvenido al servidor %1%.](#ff7e5e)'
+error_no_permission: '[Fallo:](#ff3300) [No tiene permiso para ejecutar este comando.](#ff7e5e)'
+player_offline: '[Parece que el jugador especificado está desconectado](#ff7e5e)'
+not_enough_arguments: '[No has dado suficientes argumentos](#ff7e5e)'
+too_many_arguments: '[Has dado demasiados argumentos](#ff7e5e)'
+invaild_argument: '[Asegúrese de haber introducido los argumentos correctos](#ff7e5e)'
+invaild_nickname: '[Los apodos sólo pueden constar de letras, números y guiones bajos.](#ff7e5e)'
+provide_int: '[Por favor, proporcione un valor que sea un número entero.](#ff7e5e)'
+invalid_syntax: '[Sintaxis incorrecta, utilice %1%.](#ff7e5e)'
+argument_must_be_int: '[El argumento debe ser un número entero.](#ff7e5e)'
+set_max_players: '[Has fijado el límite de jugadores en el servidor en %1%.](#ff7e5e)'
+
+provide_player_name: 'Debe introducir un nombre de usuario'
+get_player_head: '[Tienes la cabeza de un jugador](#00fb9a) [%1%](#00fb9a)'
+enable: '&cactivar'
+disable: '&adesactivar'
+gamemode_change: 'Su modo de juego ha sido cambiado a %1%'
+gamemode_change_by: 'Su modo de juego ha sido cambiado a %1% vía %2%'
+equipment_clear: 'Su inventario ha sido limpiado'
+equipment_clear_player: 'Has vaciado el inventario del jugador'
+
+fly: '[El modo de vuelo ha sido %1%](#00fb9a)'
+fly_change_by: '[El modo de vuelo ha sido %1% vía %2%](#00fb9a)'
+player_change_fly: '[Modo de vuelo para el jugador %2% ha sido %1%](#00fb9a)'
+fly_speed: '[La velocidad de vuelo se fijó en %1%](#ff7e5e)'
+walk_speed: '[La velocidad de marcha se fijó en %1%](#ff7e5e)'
+
+location: '[Localización del jugador %1%](#00fb9a)'
+
+time_lock: '[La hora del servidor ha sido bloqueada](#00fb9a)'
+time_unlock: '[Se ha desbloqueado la hora del servidor](#00fb9a)'
+time_day: '[La hora en el servidor se ha ajustado a un día](#00fb9a)'
+time_night: '[La hora del servidor ha sido cambiada a la hora nocturna](#00fb9a)'
+
+weather_rain: '[El tiempo ha cambiado a lluvioso](#00fb9a)'
+weather_thunder: '[El tiempo ha cambiado a una tormenta eléctrica](#00fb9a)'
+weather_clear: '[El tiempo ha sido cambiado por un tiempo sin nubes](#00fb9a)'
+
+cannot_be_air: '[Debes tener un objeto en la mano.](#ff7e5e)'
+item_name: '[Has cambiado el nombre del elemento a %1%.](#ff7e5e)'
+item_lore: '[Has cambiado con éxito el lore del artículo a %1%.](#ff7e5e)'
+item_in_hand: '[Debes tener un objeto en la mano.](#ff7e5e)'
+
+online: '&fActualmente en el servidor está §e%1%/%2% &fjugadores en línea.'
+online_list: '&fActualmente en el servidor está §e%1%/%2% &fjugadores en línea. &aLista de jugadores: %3%'
+
+food: '[Su nivel de saturación se ha llenado.](#ff7e5e)'
+food_by_player: '[Su nivel de saturación ha sido llenado por %1%.](#ff7e5e)'
+
+heal: '[Te has curado.](#ff7e5e)'
+heal_by_player: '[Has sido curado por %1%.](#ff7e5e)'
+
+hat_was_set: '[Su sombrero ha sido cambiado.](#ff7e5e)'
+cannot_be_more_than_one: '[El número de elementos no puede ser superior a uno.](#ff7e5e)'
+
+join_message_sponsor: '\n&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fentró en el servidor!\n'
+join_message_ranks: '&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fentró en el servidor!'
