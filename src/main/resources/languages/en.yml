@@ -1,0 +1,58 @@
+title: '&8•● &6☆ Games&fMC&e.pl &6☆ &8●•'
+welcome_in_server: '[Welcome to the server %1%.](#ff7e5e)'
+error_no_permission: '[Error:](#ff3300) [You do not have permission to run this command.](#ff7e5e)'
+player_offline: '[It looks like the specified player is offline](#ff7e5e)'
+not_enough_arguments: '[You didn't give enough arguments](#ff7e5e)'
+too_many_arguments: '[You've given too many arguments](#ff7e5e)'
+invaild_argument: '[Make sure you have entered the correct arguments](#ff7e5e)'
+invaild_nickname: '[Nicknames can only consist of letters, numbers and underscores.](#ff7e5e)'
+provide_int: '[Please provide a value that is an integer.](#ff7e5e)'
+invalid_syntax: '[Incorrect syntax, use %1%.](#ff7e5e)'
+argument_must_be_int: '[The argument must be an integer.](#ff7e5e)'
+set_max_players: '[You have set the player limit on the server to %1%.](#ff7e5e)'
+
+provide_player_name: 'You must enter a username'
+get_player_head: '[You got a player's head](#00fb9a) [%1%](#00fb9a)'
+enable: '&cenable'
+disable: '&adisable'
+gamemode_change: 'Your game mode has been changed to %1%'
+gamemode_change_by: 'Your game mode has been changed to %1% via %2%'
+equipment_clear: 'Your inventory has been cleared'
+equipment_clear_player: 'You have cleared the player's inventory'
+
+fly: '[Flying mode has been %1%](#00fb9a)'
+fly_change_by: '[Flying mode has been %1% via %2%](#00fb9a)'
+player_change_fly: '[Flying mode for player %2% has been %1%](#00fb9a)'
+fly_speed: '[The flying speed was set to %1%](#ff7e5e)'
+walk_speed: '[The walking speed was set to %1%](#ff7e5e)'
+
+location: '[Player location %1%](#00fb9a)'
+
+time_lock: '[Server time has been blocked](#00fb9a)'
+time_unlock: '[Server time has been unlocked](#00fb9a)'
+time_day: '[The time on the server has been set to a day](#00fb9a)'
+time_night: '[Server time has been changed to night time](#00fb9a)'
+
+weather_rain: '[The weather has been changed to rainy](#00fb9a)'
+weather_thunder: '[The weather has been changed to a thunderstorm](#00fb9a)'
+weather_clear: '[The weather has been changed to cloudless](#00fb9a)'
+
+cannot_be_air: '[You must hold an item in your hand.](#ff7e5e)'
+item_name: '[You have successfully renamed the item to %1%.](#ff7e5e)'
+item_lore: '[You have successfully changed the item lore to %1%.](#ff7e5e)'
+item_in_hand: '[You must be holding an item in your hand.](#ff7e5e)'
+
+online: '&fCurrently on the server is §e%1%/%2% &fplayers online.'
+online_list: '&fCurrently on the server is §e%1%/%2% &fplayers online. &aPlayers list: %3%'
+
+food: '[Your saturation level has been filled.](#ff7e5e)'
+food_by_player: '[Your saturation level has been filled by %1%.](#ff7e5e)'
+
+heal: '[You have been healed.](#ff7e5e)'
+heal_by_player: '[You have been healed by %1%.](#ff7e5e)'
+
+hat_was_set: '[Your hat has been changed.](#ff7e5e)'
+cannot_be_more_than_one: '[The number of items cannot be more than one.](#ff7e5e)'
+
+join_message_sponsor: '\n&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fentered the server!\n'
+join_message_ranks: '&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fentered the server!'

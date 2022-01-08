@@ -1,0 +1,58 @@
+title: '&8•● &6☆ Games&fMC&e.pl &6☆ &8●•'
+welcome_in_server: '[Willkommen auf dem Server %1%.](#ff7e5e)'
+error_no_permission: '[Fehler:](#ff3300) [Sie haben keine Berechtigung, diesen Befehl auszuführen.](#ff7e5e)'
+player_offline: '[Es sieht so aus, als ob der angegebene Spieler offline ist](#ff7e5e)'
+not_enough_arguments: '[Sie haben nicht genug Argumente genannt](#ff7e5e)'
+too_many_arguments: '[Sie haben zu viele Argumente angeführt](#ff7e5e)'
+invaild_argument: '[Stellen Sie sicher, dass Sie die richtigen Argumente eingegeben haben](#ff7e5e)'
+invaild_nickname: '[Nicknames dürfen nur aus Buchstaben, Zahlen und Unterstrichen bestehen.](#ff7e5e)'
+provide_int: '[Bitte geben Sie einen Wert an, der eine ganze Zahl ist.](#ff7e5e)'
+invalid_syntax: '[Falsche Syntax, verwenden Sie %1%.](#ff7e5e)'
+argument_must_be_int: '[Das Argument muss eine ganze Zahl sein.](#ff7e5e)'
+set_max_players: '[Sie haben das Spielerlimit auf dem Server auf %1%.](#ff7e5e)'
+
+provide_player_name: 'Sie müssen einen Benutzernamen eingeben'
+get_player_head: '[Du hast den Kopf eines Spielers](#00fb9a) [%1%](#00fb9a)'
+enable: '&caktivieren'
+disable: '&adeaktivieren'
+gamemode_change: 'Ihr Spielmodus wurde geändert in %1%'
+gamemode_change_by: 'Ihr Spielmodus wurde geändert in %1% über %2%'
+equipment_clear: 'Ihr Inventar wurde geleert'
+equipment_clear_player: 'Sie haben das Inventar des Spielers geleert'
+
+fly: '[Der Flugmodus wurde %1%](#00fb9a)'
+fly_change_by: '[Der Flugmodus wurde %1% über %2%](#00fb9a)'
+player_change_fly: '[Fliegender Modus für Spieler %2% wurde %1%](#00fb9a)'
+fly_speed: '[Die Fluggeschwindigkeit wurde eingestellt auf %1%](#ff7e5e)'
+walk_speed: '[Die Gehgeschwindigkeit wurde auf %1%](#ff7e5e)'
+
+location: '[Spieler Standort %1%](#00fb9a)'
+
+time_lock: '[Die Serverzeit wurde blockiert](#00fb9a)'
+time_unlock: '[Die Serverzeit wurde freigeschaltet](#00fb9a)'
+time_day: '[Die Uhrzeit auf dem Server wurde auf einen Tag eingestellt](#00fb9a)'
+time_night: '[Die Serverzeit wurde auf Nachtzeit umgestellt](#00fb9a)'
+
+weather_rain: '[Das Wetter wurde auf regnerisch geändert](#00fb9a)'
+weather_thunder: '[Das Wetter hat sich zu einem Gewitter gewandelt](#00fb9a)'
+weather_clear: '[Das Wetter wurde auf wolkenlos geändert](#00fb9a)'
+
+cannot_be_air: '[Sie müssen einen Gegenstand in Ihrer Hand halten.](#ff7e5e)'
+item_name: '[Sie haben den Artikel erfolgreich umbenannt in %1%.](#ff7e5e)'
+item_lore: '[Sie haben den Gegenstand erfolgreich geändert in %1%.](#ff7e5e)'
+item_in_hand: '[Sie müssen einen Gegenstand in der Hand halten.](#ff7e5e)'
+
+online: '&fDerzeit befindet sich auf dem Server §e%1%/%2% &fSpieler online.'
+online_list: '&fDerzeit befindet sich auf dem Server §e%1%/%2% &fplayers online. &aSpielerliste: %3%'
+
+food: '[Ihre Sättigungsgrenze ist erreicht.](#ff7e5e)'
+food_by_player: '[Ihre Sättigungsgrenze ist erreicht durch %1%.](#ff7e5e)'
+
+heal: '[Du wurdest geheilt.](#ff7e5e)'
+heal_by_player: '[Du wurdest geheilt durch %1%.](#ff7e5e)'
+
+hat_was_set: '[Ihr Hut wurde geändert.](#ff7e5e)'
+cannot_be_more_than_one: '[Die Anzahl der Elemente kann nicht mehr als eins betragen.](#ff7e5e)'
+
+join_message_sponsor: '\n&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fden Server betreten!\n'
+join_message_ranks: '&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fden Server betreten!'
