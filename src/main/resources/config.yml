@@ -5,7 +5,7 @@
 #  \____| \__,_||_| |_| |_| \___||___/|_|  |_| \____|   |_|   \___/  \___/ |_||___/
 #                                                                        by ReferTV
 general:
- #Avaliable languages: pl (Polish), en (English), de (German), es (Spanish)
+  #Avaliable languages: pl (Polish), en (English), de (German), es (Spanish)
  language: en
  join_listener: true
  quit_listener: true
