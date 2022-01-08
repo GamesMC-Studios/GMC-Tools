@@ -1,5 +1,5 @@
 general:
-  #Avaliable languages: pl (Polish), en (English), de (German), es (Spanish)
+ #Avaliable languages: pl (Polish), en (English), de (German), es (Spanish)
  language: en
  join_listener: true
  quit_listener: true
