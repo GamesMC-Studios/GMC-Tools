@@ -18,9 +18,10 @@ commands:
   fly:
     description: Polecenia na latanie.
     usage: /fly
+    aliases: [latanie]
   online:
     description: Sprawdza liczbę graczy online
-    aliases: [list]
+    aliases: [list, graczeonline]
   head:
     description: Nadaje głowy graczą
     aliases: [głowa]
@@ -28,6 +29,7 @@ commands:
     description: Zmienia nazwę przedmiotu w ręku
     usage: /item <setname/setlore> <nazwa>
   speed:
+    aliases: [szybkość, szybkosc]
   enderchest:
     aliases: [ec]
   inv:
@@ -51,9 +53,12 @@ commands:
   loom:
   grindstone:
   clear:
+    aliases: [usunekwipunek]
   getpos:
+    aliases: [kordynaty]
   tools:
     aliases: [gamesmctools]
   hat:
+    aliases: [kapelusz, czapka]
   slots:
     aliases: [setslots, sloty, ustawsloty]

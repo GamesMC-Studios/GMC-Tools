@@ -16,7 +16,7 @@ import pl.refertv.tools.Tools;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class GamemodeCommand extends CommandBase {
+public class GamemodeCommand extends CommandBase implements TabCompleter {
 
     private static final Tools plugin = Tools.getInstance();
 
@@ -72,4 +72,24 @@ public class GamemodeCommand extends CommandBase {
         return false;
     }
 
+    final static String[] ARGS = {"0", "1", "2", "3", "survival", "creative", "adventure", "spectator"};
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        Player p = (Player) sender;
+        if (command.getPermission() != null) {
+            if (!p.hasPermission(command.getPermission())) {
+                return Collections.emptyList();
+            }
+        }
+        if (args.length == 1) {
+            final List<String> TC = new ArrayList<>();
+            StringUtil.copyPartialMatches(args[0], Arrays.asList(ARGS), TC);
+            Collections.sort(TC);
+            return TC;
+        } else {
+            return Collections.emptyList();
+        }
+
+    }
 }
