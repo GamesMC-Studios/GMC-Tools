@@ -23,7 +23,7 @@ public class MainCommand extends CommandBase implements TabCompleter {
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (args.length == 0) {
-            p.sendMessage("§eThis server using GamesMC Tools plugin.\n(C) by ReferTV\n§f\n§ahttps://github.com/GamesMC-Studios/GMC-Tools\n§eAvaliable subcommands:\n§8⌊ §areload");
+            p.spigot().sendMessage(new MineDown("§eThis server using GamesMC Tools plugin.\n© by ReferTV\n§f\n§ahttps://github.com/GamesMC-Studios/GMC-Tools\n§fAvaliable subcommands:\n§8⌊ §a[reload](run_command=/tools reload)").toComponent());
             return true;
         }
         if (p.hasPermission("gamesmc.admin")) {
