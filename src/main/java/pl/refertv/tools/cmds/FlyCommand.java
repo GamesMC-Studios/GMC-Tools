@@ -38,13 +38,13 @@ public class FlyCommand extends CommandBase {
                     }
                     if (gracz.getAllowFlight() == true) {
                         gracz.setAllowFlight(false);
-                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", on, p.getName())).toComponent()), 20, 60, 20);
-                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", on, p.getName())).toComponent()), 20, 60, 20);
+                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", p.getName())).toComponent()), 20, 60, 20);
+                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", off, p.getName())).toComponent()), 20, 60, 20);
                     } else {
                         if (gracz.getAllowFlight() == false) {
                             gracz.setAllowFlight(true);
-                            gracz.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", off, p.getName())).toComponent()), 20, 60, 20);
-                            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", off, p.getName())).toComponent()), 20, 60, 20);
+                            gracz.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", p.getName())).toComponent()), 20, 60, 20);
+                            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", on, p.getName())).toComponent()), 20, 60, 20);
                         }
                     }
                 }

@@ -131,6 +131,7 @@ public class MessageManager {
 
     public static String getRawMessage(String messageID, String... placeholderReplacements) {
         String message = messages.get(messageID);
+        if (message != null) {
         int replacementIndexer = 1;
 
         // Replace placeholders
@@ -139,6 +140,7 @@ public class MessageManager {
             message = message.replace(replacementString, replacement);
             replacementIndexer = replacementIndexer + 1;
         }
+    }
         return message;
     }
 

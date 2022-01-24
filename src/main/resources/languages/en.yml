@@ -13,8 +13,8 @@ set_max_players: '[You have set the player limit on the server to %1%.](#ff7e5e)
 
 provide_player_name: 'You must enter a username'
 get_player_head: '[You got a player''s head](#00fb9a) [%1%](#00fb9a)'
-enable: '&cenable'
-disable: '&adisable'
+enable: '&aenable'
+disable: '&cdisable'
 gamemode_change: 'Your game mode has been changed to %1%'
 gamemode_change_by: 'Your game mode has been changed to %1% via %2%'
 equipment_clear: 'Your inventory has been cleared'

@@ -62,3 +62,6 @@ commands:
     aliases: [kapelusz, czapka]
   slots:
     aliases: [setslots, sloty, ustawsloty]
+  live:
+    aliases: [livestream, stream]
+    usage: /live <link>

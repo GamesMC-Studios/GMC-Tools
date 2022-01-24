@@ -11,6 +11,7 @@ provide_int: '[Proszę podaj wartość, która będzie liczbą całkowitą.](#ff
 invalid_syntax: '[Niepoprawna składnia, użyj %1%.](#ff7e5e)'
 argument_must_be_int: '[Argument musi być liczbą całkowitą.](#ff7e5e)'
 set_max_players: '[Ustawiłeś limit graczy na serwerze na %1%.](#ff7e5e)'
+console_deny: '[Nie możesz wykonać tego polecenia z poziomu konsoli.](#ff7e5e)'
 
 provide_player_name: 'Musisz podać nazwę użytkownika'
 get_player_head: '[Otrzymałeś głowę gracza](#00fb9a) [%1%](#00fb9a)'
@@ -54,6 +55,8 @@ heal_by_player: '[Zostałeś uleczony przez %1%.](#ff7e5e)'
 
 hat_was_set: '[Twój kapelusz został zmieniony.](#ff7e5e)'
 cannot_be_more_than_one: '[Liczba przedmiotów nie może być większa niż jeden.](#ff7e5e)'
+
+live: '[Gracz %1% prowadzi transmisję live [Kliknij](%2).](#ff7e5e)'
 
 join_message_sponsor: '\n&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fwszedł na serwer!\n'
 join_message_ranks: '&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fwszedł na serwer!'

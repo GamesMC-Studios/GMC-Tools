@@ -19,12 +19,10 @@ public class Join implements Listener {
             final Player p = e.getPlayer();
             if (p.hasPermission("gamesmc.sponsor")) {
                 p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("welcome_in_server", p.getName())).toComponent()), 20, 60, 20);
-                String joinsponsor = MessageManager.getRawMessage("join_message_sponsor");
-                e.joinMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(PlaceholderAPI.setPlaceholders(e.getPlayer(), joinsponsor)));
+                e.joinMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(PlaceholderAPI.setPlaceholders(e.getPlayer(), MessageManager.getRawMessage("join_message_sponsor"))));
             } else if (p.hasPermission("gamesmc.rank")) {
                 p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("welcome_in_server", p.getName())).toComponent()), 20, 60, 20);
-                String join = MessageManager.getRawMessage("join_message_ranks");
-                e.joinMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(PlaceholderAPI.setPlaceholders(e.getPlayer(), join)));
+                e.joinMessage(LegacyComponentSerializer.legacyAmpersand().deserialize(PlaceholderAPI.setPlaceholders(e.getPlayer(), MessageManager.getRawMessage("join_message_ranks"))));
             } else {
                 e.joinMessage(null);
             }

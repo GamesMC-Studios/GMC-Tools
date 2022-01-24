@@ -13,8 +13,8 @@ set_max_players: '[Has fijado el límite de jugadores en el servidor en %1%.](#f
 
 provide_player_name: 'Debe introducir un nombre de usuario'
 get_player_head: '[Tienes la cabeza de un jugador](#00fb9a) [%1%](#00fb9a)'
-enable: '&cactivar'
-disable: '&adesactivar'
+enable: '&aactivar'
+disable: '&cdesactivar'
 gamemode_change: 'Su modo de juego ha sido cambiado a %1%'
 gamemode_change_by: 'Su modo de juego ha sido cambiado a %1% vía %2%'
 equipment_clear: 'Su inventario ha sido limpiado'

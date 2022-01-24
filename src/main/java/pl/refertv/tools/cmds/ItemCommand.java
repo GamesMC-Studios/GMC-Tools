@@ -1,6 +1,7 @@
 package pl.refertv.tools.cmds;
 
 import de.themoep.minedown.MineDown;
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -11,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.StringUtil;
 import pl.refertv.tools.MessageManager;
-import pl.refertv.tools.Tools;
+import pl.refertv.tools.utils.Colors;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +34,7 @@ public class ItemCommand extends CommandBase implements TabCompleter {
                         }
                         ItemStack item = p.getItemInHand();
                         ItemMeta itemmeta = item.getItemMeta();
-                        String name = str.toString().replace('&', '§');
+                        String name = Colors.colorHex(str.toString());
 
                         if (p.getInventory().getItemInMainHand().getType() == Material.AIR) {
                             MessageManager.sendMessage(p, "item_in_hand");
@@ -42,7 +43,7 @@ public class ItemCommand extends CommandBase implements TabCompleter {
 
                         switch(args[0]) {
                             case "setname" -> {
-                            itemmeta.setDisplayName(name);
+                            itemmeta.setDisplayName(ChatColor.RESET + name);
                             item.setItemMeta(itemmeta);
                             p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("item_name", name)).toComponent()), 20, 60, 20);
                         } case "setlore" -> {

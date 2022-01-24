@@ -9,3 +9,9 @@ general:
  language: en
  join_listener: true
  quit_listener: true
+ live_links:
+   - 'www.youtube.com/watch?v'
+   - 'youtube.com/watch?v'
+   - 'www.youtu.be/watch?v'
+   - 'youtu.be/watch?v'
+   - 'twitch.tv'
