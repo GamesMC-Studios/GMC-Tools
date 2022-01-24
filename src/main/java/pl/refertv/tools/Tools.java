@@ -1,22 +1,22 @@
 package pl.refertv.tools;
 
-import de.themoep.minedown.MineDown;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.refertv.tools.Config.Settings;
 import pl.refertv.tools.cmds.*;
 import pl.refertv.tools.listeners.Join;
 import pl.refertv.tools.listeners.Leave;
+import pl.refertv.tools.utils.CooldownManager;
 
 public final class Tools extends JavaPlugin {
 
     private static Settings settings;
+    private static Tools instance;
+
     public static Settings getSettings() {
         return settings;
     }
 
-
-    private static Tools instance;
     public static Tools getInstance() {
         return instance;
     }
@@ -41,6 +41,8 @@ public final class Tools extends JavaPlugin {
         instance = this;
 
         registerCommands();
+
+        CooldownManager.setupCooldown();
 
         saveDefaultConfig();
         getConfig().options().copyDefaults(true);

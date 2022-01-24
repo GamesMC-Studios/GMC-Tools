@@ -6,12 +6,14 @@
 #                                                                        by ReferTV
 general:
   #Avaliable languages: pl (Polish), en (English), de (German), es (Spanish)
- language: en
- join_listener: true
- quit_listener: true
- live_links:
-   - 'www.youtube.com/watch?v'
-   - 'youtube.com/watch?v'
-   - 'www.youtu.be/watch?v'
-   - 'youtu.be/watch?v'
-   - 'twitch.tv'
+  language: en
+  join_listener: true
+  quit_listener: true
+  # In seconds
+  command_cooldown: 1800
+  live_links:
+    - 'www.youtube.com/watch?v'
+    - 'youtube.com/watch?v'
+    - 'www.youtu.be/watch?v'
+    - 'youtu.be/watch?v'
+    - 'twitch.tv'

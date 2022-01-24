@@ -6,7 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import pl.refertv.tools.MessageManager;
-import pl.refertv.tools.Tools;
 
 public class FlyCommand extends CommandBase {
 
@@ -48,8 +47,7 @@ public class FlyCommand extends CommandBase {
                         }
                     }
                 }
-            }
-            else {
+            } else {
                 MessageManager.sendMessage(p, "error_no_permission");
             }
         } else {

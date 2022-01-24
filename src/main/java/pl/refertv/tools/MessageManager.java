@@ -58,15 +58,15 @@ public class MessageManager {
         FileConfiguration config = loadConfiguration(f);
         config.options().header(
                 """
-                  ____                               __  __   ____   _____                _      \s
-                 / ___|  __ _  _ __ ___    ___  ___ |  \\/  | / ___| |_   _|  ___    ___  | | ___ \s
-                | |  _  / _` || '_ ` _ \\  / _ \\/ __|| |\\/| || |       | |   / _ \\  / _ \\ | |/ __|\s
-                | |_| || (_| || | | | | ||  __/\\__ \\| |  | || |___    | |  | (_) || (_) || |\\__ \\\s
-                 \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\s
-                                                                                       by ReferTV\s
-                This plugin use a Minedown formatting, read more about it here: https://github.com/Phoenix616/MineDown\s
-                If you want to help with plugin translate please send translation to my discord ReferTV#1770\s
-                or open Pull Request on GitHub: https://github.com/GamesMC-Studios/GMC-Tools/pulls  \s                                                  """);
+                          ____                               __  __   ____   _____                _      \s
+                         / ___|  __ _  _ __ ___    ___  ___ |  \\/  | / ___| |_   _|  ___    ___  | | ___ \s
+                        | |  _  / _` || '_ ` _ \\  / _ \\/ __|| |\\/| || |       | |   / _ \\  / _ \\ | |/ __|\s
+                        | |_| || (_| || | | | | ||  __/\\__ \\| |  | || |___    | |  | (_) || (_) || |\\__ \\\s
+                         \\____| \\__,_||_| |_| |_| \\___||___/|_|  |_| \\____|   |_|   \\___/  \\___/ |_||___/\s
+                                                                                               by ReferTV\s
+                        This plugin use a Minedown formatting, read more about it here: https://github.com/Phoenix616/MineDown\s
+                        If you want to help with plugin translate please send translation to my discord ReferTV#1770\s
+                        or open Pull Request on GitHub: https://github.com/GamesMC-Studios/GMC-Tools/pulls  \s                                                  """);
         InputStream defaultMessageFile = plugin.getResource("languages/" + language + ".yml");
         if (defaultMessageFile != null) {
             YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(new InputStreamReader(defaultMessageFile, StandardCharsets.UTF_8));
@@ -132,15 +132,15 @@ public class MessageManager {
     public static String getRawMessage(String messageID, String... placeholderReplacements) {
         String message = messages.get(messageID);
         if (message != null) {
-        int replacementIndexer = 1;
+            int replacementIndexer = 1;
 
-        // Replace placeholders
-        for (String replacement : placeholderReplacements) {
-            String replacementString = "%" + replacementIndexer + "%";
-            message = message.replace(replacementString, replacement);
-            replacementIndexer = replacementIndexer + 1;
+            // Replace placeholders
+            for (String replacement : placeholderReplacements) {
+                String replacementString = "%" + replacementIndexer + "%";
+                message = message.replace(replacementString, replacement);
+                replacementIndexer = replacementIndexer + 1;
+            }
         }
-    }
         return message;
     }
 

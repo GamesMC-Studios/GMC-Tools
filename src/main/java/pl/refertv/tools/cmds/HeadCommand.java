@@ -2,17 +2,13 @@ package pl.refertv.tools.cmds;
 
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.SkullType;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
-import org.jetbrains.annotations.NotNull;
 import pl.refertv.tools.MessageManager;
-import pl.refertv.tools.Tools;
 
 import java.util.regex.Pattern;
 

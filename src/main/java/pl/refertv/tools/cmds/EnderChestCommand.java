@@ -25,12 +25,13 @@ public class EnderChestCommand extends CommandBase {
                     gracz.openInventory(gracz.getEnderChest());
                     gracz.playSound(gracz.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 2F, 1F);
                 } else {
-                    MessageManager.sendMessage(p, "error_no_permission"); }
+                    MessageManager.sendMessage(p, "error_no_permission");
+                }
             }
             if (args.length > 1) {
                 MessageManager.sendMessage(p, "too_many_arguments");
             }
-            } else {
+        } else {
             MessageManager.sendMessage(p, "error_no_permission");
         }
         return false;

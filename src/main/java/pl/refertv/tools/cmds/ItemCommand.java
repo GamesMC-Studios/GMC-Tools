@@ -21,56 +21,59 @@ import java.util.List;
 
 public class ItemCommand extends CommandBase implements TabCompleter {
 
+    final static String[] ARGS = {"setname", "setlore", "reset", "clear"};
+
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
-            if (p.hasPermission("gamesmc.item")) {
-                if (args.length >= 1) {
-                    if (args.length == 1) {
-                        MessageManager.sendMessage(p, "invalid_syntax", cmd.getUsage());
-                    } else {
-                        StringBuilder str = new StringBuilder();
-                        for (int i = 1; i < args.length; ++i) {
-                            str.append(args[i] + " ");
-                        }
-                        ItemStack item = p.getItemInHand();
-                        ItemMeta itemmeta = item.getItemMeta();
-                        String name = Colors.colorHex(str.toString());
+        if (p.hasPermission("gamesmc.item")) {
+            if (args.length >= 1) {
+                if (args.length == 1) {
+                    MessageManager.sendMessage(p, "invalid_syntax", cmd.getUsage());
+                } else {
+                    StringBuilder str = new StringBuilder();
+                    for (int i = 1; i < args.length; ++i) {
+                        str.append(args[i] + " ");
+                    }
+                    ItemStack item = p.getItemInHand();
+                    ItemMeta itemmeta = item.getItemMeta();
+                    String name = Colors.colorHex(str.toString());
 
-                        if (p.getInventory().getItemInMainHand().getType() == Material.AIR) {
-                            MessageManager.sendMessage(p, "item_in_hand");
-                            return true;
-                        }
+                    if (p.getInventory().getItemInMainHand().getType() == Material.AIR) {
+                        MessageManager.sendMessage(p, "item_in_hand");
+                        return true;
+                    }
 
-                        switch(args[0]) {
-                            case "setname" -> {
+                    switch (args[0]) {
+                        case "setname" -> {
                             itemmeta.setDisplayName(ChatColor.RESET + name);
                             item.setItemMeta(itemmeta);
                             p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("item_name", name)).toComponent()), 20, 60, 20);
-                        } case "setlore" -> {
+                        }
+                        case "setlore" -> {
                             itemmeta = item.getItemMeta();
                             List<String> lore = new ArrayList();
                             Collections.addAll(lore, name.split("%nl%"));
                             itemmeta.setLore(lore);
                             item.setItemMeta(itemmeta);
                             p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("item_lore", name)).toComponent()), 20, 60, 20);
-                        } case "reset", "clear" -> {
-                                itemmeta = item.getItemMeta();
-                                itemmeta.setDisplayName(null);
-                                itemmeta.setLore(null);
-                                item.setItemMeta(itemmeta);
+                        }
+                        case "reset", "clear" -> {
+                            itemmeta = item.getItemMeta();
+                            itemmeta.setDisplayName(null);
+                            itemmeta.setLore(null);
+                            item.setItemMeta(itemmeta);
                         }
                         default -> {
                             MessageManager.sendMessage(p, "invalid_syntax", cmd.getUsage());
-                            }
                         }
                     }
-                } else {
-                    MessageManager.sendMessage(p, "invalid_syntax", cmd.getUsage());
                 }
+            } else {
+                MessageManager.sendMessage(p, "invalid_syntax", cmd.getUsage());
             }
-        return true;
         }
-    final static String[] ARGS = {"setname", "setlore", "reset", "clear"};
+        return true;
+    }
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {

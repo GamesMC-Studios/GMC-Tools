@@ -20,14 +20,14 @@ public class HatCommand extends CommandBase implements Listener {
         PlayerInventory inv = p.getInventory();
         ItemStack helm = inv.getHelmet();
         ItemStack held = inv.getItemInMainHand();
-            if (this.checkValidHat(p, held)) {
-                inv.setItemInMainHand(helm);
-                inv.setHelmet(held);
-                p.updateInventory();
-                p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("hat_was_set", p.getName())).toComponent()), 20, 60, 20);
-            }
-        return true;
+        if (this.checkValidHat(p, held)) {
+            inv.setItemInMainHand(helm);
+            inv.setHelmet(held);
+            p.updateInventory();
+            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("hat_was_set", p.getName())).toComponent()), 20, 60, 20);
         }
+        return true;
+    }
 
     private boolean checkValidHat(Player p, ItemStack held) {
         if (!p.hasPermission("gamesmc.hat." + held.getType().name()) && (p.isPermissionSet("gamesmc.hat." + held.getType().name()) || (!p.hasPermission("gamesmc.hat.blocks") || !held.getType().isBlock()) && (!p.hasPermission("gamesmc.hat.items") || held.getType().isBlock()))) {
@@ -46,12 +46,12 @@ public class HatCommand extends CommandBase implements Listener {
     @EventHandler
     public void onClickInHelmetSlot(InventoryClickEvent event) {
         if (event.getInventory().getType() == InventoryType.CRAFTING && event.getRawSlot() == 5 && event.getWhoClicked().getItemOnCursor().getType() != Material.AIR && event.getWhoClicked().getItemOnCursor().getType().getEquipmentSlot() != EquipmentSlot.HEAD) {
-            Player p = (Player)event.getWhoClicked();
+            Player p = (Player) event.getWhoClicked();
             ItemStack cursorItem = p.getItemOnCursor();
             ItemStack hatItem = p.getInventory().getHelmet();
             if (this.checkValidHat(p, cursorItem)) {
-                p.setItemOnCursor((ItemStack)null);
-                p.getInventory().setHelmet((ItemStack)null);
+                p.setItemOnCursor((ItemStack) null);
+                p.getInventory().setHelmet((ItemStack) null);
             }
         }
 

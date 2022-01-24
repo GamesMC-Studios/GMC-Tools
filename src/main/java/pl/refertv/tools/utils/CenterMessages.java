@@ -4,11 +4,11 @@ import org.bukkit.ChatColor;
 
 public final class CenterMessages {
 
+    private final static int CENTER_PX = 154;
+
     private CenterMessages() {
         //not called
     }
-
-    private final static int CENTER_PX = 154;
 
     public static String generate(String message) {
         if (message == null || message.equals("")) {

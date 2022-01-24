@@ -1,7 +1,6 @@
 package pl.refertv.tools.cmds;
 
 import de.themoep.minedown.MineDown;
-import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
@@ -28,31 +27,33 @@ public class SpeedCommand extends CommandBase {
         }
         return false;
     }
-        public void setFlySpeed (Player p, double speed){
-            if (speed > 10) {
-                double b = speed - 10;
-                speed -= b;
-            }
-            if (speed < 0) {
-                speed -= speed;
-            }
-            double a = speed / 10;
-            float value = (float) a;
-            p.setFlySpeed(value);
-            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_speed", String.valueOf(value))).toComponent()));
+
+    public void setFlySpeed(Player p, double speed) {
+        if (speed > 10) {
+            double b = speed - 10;
+            speed -= b;
         }
-        public void setWalkSpeed (Player p, double speed){
-            if (speed > 10) {
-                double b = speed - 10;
-                speed -= b;
-            }
-            if (speed < 0) {
-                speed -= speed;
-            }
-            double a = speed / 10;
-            float value = (float) a;
-            p.setWalkSpeed(value);
-            MessageManager.sendMessage(p, "walk_speed", String.valueOf(value));
-            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("walk_speed", String.valueOf(value))).toComponent()));
+        if (speed < 0) {
+            speed -= speed;
+        }
+        double a = speed / 10;
+        float value = (float) a;
+        p.setFlySpeed(value);
+        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_speed", String.valueOf(value))).toComponent()));
+    }
+
+    public void setWalkSpeed(Player p, double speed) {
+        if (speed > 10) {
+            double b = speed - 10;
+            speed -= b;
+        }
+        if (speed < 0) {
+            speed -= speed;
+        }
+        double a = speed / 10;
+        float value = (float) a;
+        p.setWalkSpeed(value);
+        MessageManager.sendMessage(p, "walk_speed", String.valueOf(value));
+        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("walk_speed", String.valueOf(value))).toComponent()));
     }
 }

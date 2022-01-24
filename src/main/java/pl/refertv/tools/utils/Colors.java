@@ -5,7 +5,6 @@ import pl.refertv.tools.Tools;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import net.md_5.bungee.api.ChatColor;
 
 public class Colors {
     public static final Pattern HEX = Pattern.compile("&#(\\w{5}[0-9a-f])");
@@ -18,7 +17,7 @@ public class Colors {
             Matcher matcher = HEX.matcher(text);
             StringBuffer buffer = new StringBuffer();
 
-            while(matcher.find()) {
+            while (matcher.find()) {
                 matcher.appendReplacement(buffer, ChatColor.of("#" + matcher.group(1)).toString());
             }
 

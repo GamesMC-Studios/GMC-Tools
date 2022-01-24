@@ -8,7 +8,6 @@ import org.bukkit.entity.Player;
 import pl.refertv.tools.MessageManager;
 
 import java.io.*;
-import java.util.Collection;
 import java.util.Properties;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -23,27 +22,28 @@ public class SlotsCommand extends CommandBase {
             if (args.length == 1) {
                 if (!SLOTS_PATTERN.matcher(args[0]).matches()) {
                     MessageManager.sendMessage(p, "argument_must_be_int");
-                } try {
-                        Bukkit.getServer().setMaxPlayers(Integer.valueOf(args[0]));
-                        MessageManager.sendMessage(p, "set_max_players", String.valueOf(Bukkit.getServer().getMaxPlayers()).toString());
-                        Properties properties = new Properties();
-                        BufferedReader bReader = new BufferedReader(new FileReader("server.properties"));
-                        properties.load(bReader);
-                        bReader.close();
-                        properties.setProperty("max-players", Integer.valueOf(args[0]).toString());
-                        BufferedWriter bWriter = new BufferedWriter(new FileWriter("server.properties"));
-                        properties.store(bWriter, "");
-                        bWriter.close();
-                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("set_max_players", String.valueOf(Bukkit.getServer().getMaxPlayers()).toString())).toComponent()));
-                    } catch (IOException IOE) {
-                        Logger.getLogger("Can't update server.properties!");
-                    }
-                } else {
-                    MessageManager.sendMessage(p, "invaild_argument");
+                }
+                try {
+                    Bukkit.getServer().setMaxPlayers(Integer.valueOf(args[0]));
+                    MessageManager.sendMessage(p, "set_max_players", String.valueOf(Bukkit.getServer().getMaxPlayers()).toString());
+                    Properties properties = new Properties();
+                    BufferedReader bReader = new BufferedReader(new FileReader("server.properties"));
+                    properties.load(bReader);
+                    bReader.close();
+                    properties.setProperty("max-players", Integer.valueOf(args[0]).toString());
+                    BufferedWriter bWriter = new BufferedWriter(new FileWriter("server.properties"));
+                    properties.store(bWriter, "");
+                    bWriter.close();
+                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("set_max_players", String.valueOf(Bukkit.getServer().getMaxPlayers()).toString())).toComponent()));
+                } catch (IOException IOE) {
+                    Logger.getLogger("Can't update server.properties!");
                 }
             } else {
-                MessageManager.sendMessage(p, "error_no_permission");
+                MessageManager.sendMessage(p, "invaild_argument");
             }
-            return false;
+        } else {
+            MessageManager.sendMessage(p, "error_no_permission");
         }
+        return false;
     }
+}

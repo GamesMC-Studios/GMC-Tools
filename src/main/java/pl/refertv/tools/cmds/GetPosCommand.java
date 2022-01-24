@@ -11,7 +11,7 @@ public class GetPosCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.getpos")) {
             if (args.length == 0) {
-                MessageManager.sendMessage(p,"location", p.getName());
+                MessageManager.sendMessage(p, "location", p.getName());
                 p.sendMessage("\n§7X: §b" + p.getLocation().getX() + "\n§7Y: §b" + p.getLocation().getY() + "\n§7Z: §b" + p.getLocation().getZ());
             }
             if (p.hasPermission("gamesmc.getpos.others")) {

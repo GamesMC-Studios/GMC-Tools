@@ -3,14 +3,12 @@ package pl.refertv.tools.cmds;
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.GameRule;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
 import pl.refertv.tools.MessageManager;
-import pl.refertv.tools.Tools;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +16,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class WeatherCommand extends CommandBase implements TabCompleter {
+
+    final static String[] ARGS = {"rain", "deszcz", "thunder", "burza", "wyczyść", "clear"};
 
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
@@ -49,7 +49,6 @@ public class WeatherCommand extends CommandBase implements TabCompleter {
         }
         return false;
     }
-    final static String[] ARGS = {"rain", "deszcz", "thunder", "burza", "wyczyść", "clear"};
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {

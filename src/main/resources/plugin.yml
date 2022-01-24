@@ -14,54 +14,54 @@ commands:
   gamemode:
     description: Polecenie gamemode.
     usage: /gamemode
-    aliases: [gm]
+    aliases: [ gm ]
   fly:
     description: Polecenia na latanie.
     usage: /fly
-    aliases: [latanie]
+    aliases: [ latanie ]
   online:
     description: Sprawdza liczbę graczy online
-    aliases: [list, graczeonline]
+    aliases: [ list, graczeonline ]
   head:
     description: Nadaje głowy graczą
-    aliases: [głowa]
+    aliases: [ głowa ]
   item:
     description: Zmienia nazwę przedmiotu w ręku
     usage: /item <setname/setlore> <nazwa>
   speed:
-    aliases: [szybkość, szybkosc]
+    aliases: [ szybkość, szybkosc ]
   enderchest:
-    aliases: [ec]
+    aliases: [ ec ]
   inv:
-    aliases: [invsee]
+    aliases: [ invsee ]
   heal:
-    aliases: [uzdrowienie]
+    aliases: [ uzdrowienie ]
   food:
-    aliases: [nakramienie]
+    aliases: [ nakramienie ]
   time:
-    aliases: [czas]
+    aliases: [ czas ]
   crafting:
-    aliases: [craft]
+    aliases: [ craft ]
   anvil:
-    aliases: [kowadło]
+    aliases: [ kowadło ]
   pogoda:
-    aliases: [weather]
+    aliases: [ weather ]
   cartographytable:
-    aliases: [ctable]
+    aliases: [ ctable ]
   stonecutter:
   smithingtable:
   loom:
   grindstone:
   clear:
-    aliases: [usunekwipunek]
+    aliases: [ usunekwipunek ]
   getpos:
-    aliases: [kordynaty]
+    aliases: [ kordynaty ]
   tools:
-    aliases: [gamesmctools]
+    aliases: [ gamesmctools ]
   hat:
-    aliases: [kapelusz, czapka]
+    aliases: [ kapelusz, czapka ]
   slots:
-    aliases: [setslots, sloty, ustawsloty]
+    aliases: [ setslots, sloty, ustawsloty ]
   live:
-    aliases: [livestream, stream]
+    aliases: [ livestream, stream ]
     usage: /live <link>

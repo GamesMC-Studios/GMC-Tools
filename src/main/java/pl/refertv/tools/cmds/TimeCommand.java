@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 
 public class TimeCommand extends CommandBase implements TabCompleter {
 
+    final static String[] ARGS = {"dzień", "day", "noc", "zatrzymaj", "lock", "wznów", "unlock", "set", "ustaw"};
     private static final Pattern NAME_PATTERN = Pattern.compile("^[0-9]*[1-9][0-9]*$");
 
     @Override
@@ -66,7 +67,6 @@ public class TimeCommand extends CommandBase implements TabCompleter {
         }
         return false;
     }
-    final static String[] ARGS = {"dzień", "day", "noc", "zatrzymaj", "lock", "wznów", "unlock", "set", "ustaw"};
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {

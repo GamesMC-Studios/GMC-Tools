@@ -1,7 +1,6 @@
 package pl.refertv.tools.cmds;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import pl.refertv.tools.MessageManager;
@@ -23,7 +22,8 @@ public class GrindstoneCommand extends CommandBase {
                     }
                     gracz.openGrindstone(null, true);
                 } else {
-                    MessageManager.sendMessage(p, "error_no_permission"); }
+                    MessageManager.sendMessage(p, "error_no_permission");
+                }
             }
             if (args.length > 1) {
                 MessageManager.sendMessage(p, "too_many_arguments");

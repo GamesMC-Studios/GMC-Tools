@@ -3,13 +3,9 @@ package pl.refertv.tools.cmds;
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import pl.refertv.tools.MessageManager;
-import pl.refertv.tools.Tools;
-
-import java.awt.*;
 
 public class FoodCommand extends CommandBase {
 

@@ -7,7 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
-import pl.refertv.tools.Config.Settings;
 import pl.refertv.tools.MessageManager;
 import pl.refertv.tools.Tools;
 
@@ -18,6 +17,7 @@ import java.util.List;
 
 public class MainCommand extends CommandBase implements TabCompleter {
 
+    final static String[] ARGS = {"reload", "parsestring"};
     private static final Tools plugin = Tools.getInstance();
 
     @Override
@@ -34,6 +34,11 @@ public class MainCommand extends CommandBase implements TabCompleter {
                     plugin.getLogger().info("§aReloaded plugin config and message files.");
                     p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown("All messages and configs have been reloaded.").toComponent()));
                 }
+                case "parsestring" -> {
+                    MessageManager.loadMessages(Tools.getSettings().getLanguage());
+                    p.sendMessage(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage(args[1])).toComponent()));
+                    return true;
+                }
                 default -> {
                     MessageManager.sendMessage(p, "invaild_argument");
                 }
@@ -43,7 +48,6 @@ public class MainCommand extends CommandBase implements TabCompleter {
         }
         return false;
     }
-    final static String[] ARGS = {"reload"};
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {

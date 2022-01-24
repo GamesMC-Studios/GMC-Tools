@@ -12,6 +12,7 @@ public class Settings {
     private boolean join_listener;
     private boolean quit_listener;
     private List<String> LiveLinks;
+    private Integer getCooldown;
 
     public Settings(Plugin plugin) {
         this.plugin = plugin;
@@ -28,14 +29,29 @@ public class Settings {
             this.join_listener = config.getBoolean("general.join_listener", true);
             this.quit_listener = config.getBoolean("general.quit_listener", true);
             this.LiveLinks = config.getStringList("general.live_links");
+            this.getCooldown = config.getInt("general.command_cooldown");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public String getLanguage() {
         return language;
     }
-    public boolean getJoinListener() { return join_listener; }
-    public boolean getQuitListener() { return quit_listener; }
-    public List<String> getLiveLinks() { return LiveLinks; }
+
+    public boolean getJoinListener() {
+        return join_listener;
+    }
+
+    public boolean getQuitListener() {
+        return quit_listener;
+    }
+
+    public List<String> getLiveLinks() {
+        return LiveLinks;
+    }
+
+    public Integer getGetCooldown() {
+        return getCooldown;
+    }
 }
