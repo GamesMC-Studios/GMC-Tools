@@ -65,6 +65,10 @@
             <id>minebench-repo</id>
             <url>https://repo.minebench.de/</url>
         </repository>
+        <repository>
+            <id>iridiumdevelopment</id>
+            <url>https://nexus.iridiumdevelopment.net/repository/maven-releases/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -85,6 +89,11 @@
             <artifactId>minedown</artifactId>
             <version>1.7.1-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.iridium</groupId>
+            <artifactId>IridiumColorAPI</artifactId>
+            <version>LATEST</version>
         </dependency>
     </dependencies>
 </project>

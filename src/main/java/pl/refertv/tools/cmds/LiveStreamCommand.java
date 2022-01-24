@@ -23,7 +23,7 @@ public class LiveStreamCommand extends CommandBase {
             } else if (Tools.getSettings().getLiveLinks().stream().anyMatch(s -> args[0].contains(s))) {
                 if (CooldownManager.checkCooldown(p.getPlayer())) {
                     CooldownManager.setCooldown(p.getPlayer(), Tools.getSettings().getGetCooldown());
-                    getOnlinePlayers().forEach(player -> player.spigot().sendMessage(new MineDown(CenterMessages.generate(MessageManager.getRawMessage("live", player.getName(), args[0]))).toComponent()));
+                    getOnlinePlayers().forEach(player -> player.spigot().sendMessage(new MineDown(CenterMessages.generate(MessageManager.getRawMessage("live", p.getName(), args[0]))).toComponent()));
                     p.spigot().sendMessage(new MineDown("&aPomyślnie wysłałeś wiadomość o transmisji live.").toComponent());
                     p.sendTitle(TextComponent.toLegacyText(new MineDown("&a").toComponent()), TextComponent.toLegacyText(new MineDown("&aWiadomość została wysłana").toComponent()));
                 } else {

@@ -55,7 +55,8 @@ heal_by_player: '[Zostałeś uleczony przez %1%.](#ff7e5e)'
 hat_was_set: '[Twój kapelusz został zmieniony.](#ff7e5e)'
 cannot_be_more_than_one: '[Liczba przedmiotów nie może być większa niż jeden.](#ff7e5e)'
 
-live: '[Gracz %1% prowadzi transmisję live [Kliknij](%2).](#ff7e5e)'
+live: '\n%1% prowadzi transmisję live \n[Kliknij, aby otworzyć transmisję live.](#fff-#aaa
+  %2% Otwórz transmisję live pod linkiem %2%)\n'
 arg_must_be_link: '[Podany parametr musi być linkiem.](#ff7e5e)'
 cooldown_message: '[Musisz odczekać %1% sekund, przed kolejnym wysłaniem tego polecenia.](#ff7e5e)'
 
