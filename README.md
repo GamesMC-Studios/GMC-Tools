@@ -10,7 +10,7 @@ if you found any bug please report this in [issue](https://github.com/GamesMC-St
 
 # Commands ⌨️
 
-+ Basic: gamemode, fly, clear, hat, head, heal, food, invsee, speed, item, time, getpos, slots, online, weather
++ Basic: gamemode, fly, clear, hat, head, heal, food, invsee, speed, item, time, getpos, slots, online, weather, repair, livestream
 + GUI's: craftingtable, enderchest, anvil, loom, grindstone, stonecutter, smithingtable, cartographytable
 
 # Listeners 📨
