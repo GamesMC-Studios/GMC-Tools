@@ -20,6 +20,7 @@ public class GodCommand extends CommandBase implements TabCompleter {
         if (p.hasPermission("gamesmc.god")) {
             if (args.length == 0) {
                 MessageManager.sendMessage(p, "invalid_syntax", cmd.getUsage());
+                return true;
             }
             switch (args[0]) {
                 case "on" -> {

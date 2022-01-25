@@ -17,8 +17,6 @@ import java.util.List;
 
 public class GamemodeCommand extends CommandBase implements TabCompleter {
 
-    final static String[] ARGS = {"0", "1", "2", "3", "survival", "creative", "adventure", "spectator"};
-
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (!(p instanceof Player)) {
@@ -51,6 +49,8 @@ public class GamemodeCommand extends CommandBase implements TabCompleter {
         p.setGameMode(mode);
         return true;
     }
+
+    final static String[] ARGS = {"0", "1", "2", "3", "survival", "creative", "adventure", "spectator"};
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {

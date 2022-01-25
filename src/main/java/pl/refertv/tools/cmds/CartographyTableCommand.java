@@ -24,8 +24,7 @@ public class CartographyTableCommand extends CommandBase {
                 } else {
                     MessageManager.sendMessage(p, "error_no_permission");
                 }
-            }
-            if (args.length > 1) {
+            } if (args.length > 1) {
                 MessageManager.sendMessage(p, "too_many_arguments");
             }
         } else {
@@ -34,4 +33,3 @@ public class CartographyTableCommand extends CommandBase {
         return false;
     }
 }
-

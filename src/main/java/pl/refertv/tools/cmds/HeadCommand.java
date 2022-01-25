@@ -21,7 +21,6 @@ public class HeadCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
 
         if (p.hasPermission("gamesmc.head")) {
-            final String owner;
             if (args.length == 0) {
                 p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("provide_player_name")).toComponent()));
                 return true;
@@ -30,17 +29,16 @@ public class HeadCommand extends CommandBase {
                 if (!NAME_PATTERN.matcher(args[0]).matches()) {
                     MessageManager.sendMessage(p, "invaild_nickname");
                 } else {
-                    owner = args[0];
                     ItemStack skull = new ItemStack(Material.PLAYER_HEAD, 1, (short) SkullType.PLAYER.ordinal());
                     SkullMeta head = (SkullMeta) skull.getItemMeta();
 
                     head.setOwner(args[0]);
-                    head.setDisplayName("§eGłowa " + owner);
+                    head.setDisplayName("§eGłowa " + args[0]);
                     skull.setItemMeta(head);
 
                     p.getPlayer().getInventory().addItem(skull);
-                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("get_player_head", owner)).toComponent()));
-                    MessageManager.sendMessage(p, "get_player_head", owner);
+                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("get_player_head", args[0])).toComponent()));
+                    MessageManager.sendMessage(p, "get_player_head", args[0]);
                 }
             }
         } else {

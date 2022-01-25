@@ -1,8 +1,6 @@
 package pl.refertv.tools.cmds;
 
-import com.iridium.iridiumcolorapi.IridiumColorAPI;
 import de.themoep.minedown.MineDown;
-import de.themoep.minedown.MineDownStringifier;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Material;
@@ -38,7 +36,7 @@ public class ItemCommand extends CommandBase implements TabCompleter {
                     }
                     ItemStack item = p.getItemInHand();
                     ItemMeta itemmeta = item.getItemMeta();
-                    String name = IridiumColorAPI.process(str.toString());
+                    String name = Colors.colorHex(str.toString());
 
                     if (p.getInventory().getItemInMainHand().getType() == Material.AIR) {
                         MessageManager.sendMessage(p, "item_in_hand");

@@ -4,6 +4,7 @@ error_no_permission: '[Błąd:](#ff3300) [Nie masz uprawnień do wykoanania tego
 player_offline: '[Wygląda na to, że podany gracz jest offline.](#ff7e5e)'
 not_enough_arguments: '[Podałeś za mało argumentów](#ff7e5e)'
 too_many_arguments: '[Podałeś za dużo argumentów](#ff7e5e)'
+needed_message: '[Podaj wiadomość którą chcesz wysłać](#ff7e5e)'
 invaild_argument: '[Upewnij się czy wpisane argumenty są poprawne](#ff7e5e)'
 invaild_nickname: '[Nick może składać się tylko z liter oraz cyfr oraz podkreślników.](#ff7e5e)'
 provide_int: '[Proszę podaj wartość, która będzie liczbą całkowitą.](#ff7e5e)'

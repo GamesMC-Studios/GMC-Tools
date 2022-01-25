@@ -68,3 +68,4 @@ commands:
   repair:
   god:
     usage: /god <on/off>
+  broadcast:
