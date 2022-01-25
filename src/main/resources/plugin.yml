@@ -65,3 +65,4 @@ commands:
   live:
     aliases: [ livestream, stream ]
     usage: /live <link>
+  repair:
