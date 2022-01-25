@@ -15,17 +15,13 @@ public class FlyCommand extends CommandBase {
             if (args.length > 1) {
                 p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("invaild_argument")).toComponent()), 20, 60, 20);
             }
-            String off = MessageManager.getRawMessage("disable");
-            String on = MessageManager.getRawMessage("enable");
             if (args.length == 0) {
                 if (p.getAllowFlight() == true) {
                     p.setAllowFlight(false);
-                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly", off)).toComponent()), 20, 60, 20);
+                    p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly", MessageManager.getRawMessage("disable"))).toComponent()), 20, 60, 20);
                 } else {
-                    if (p.getAllowFlight() == false) {
                         p.setAllowFlight(true);
-                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly", on)).toComponent()), 20, 60, 20);
-                    }
+                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly", MessageManager.getRawMessage("enable"))).toComponent()), 20, 60, 20);
                 }
             }
             if (p.hasPermission("gamesmc.fly.others")) {
@@ -38,13 +34,11 @@ public class FlyCommand extends CommandBase {
                     if (gracz.getAllowFlight() == true) {
                         gracz.setAllowFlight(false);
                         p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", p.getName())).toComponent()), 20, 60, 20);
-                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", off, p.getName())).toComponent()), 20, 60, 20);
+                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", MessageManager.getRawMessage("disable"), p.getName())).toComponent()), 20, 60, 20);
                     } else {
-                        if (gracz.getAllowFlight() == false) {
                             gracz.setAllowFlight(true);
                             gracz.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", p.getName())).toComponent()), 20, 60, 20);
-                            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", on, p.getName())).toComponent()), 20, 60, 20);
-                        }
+                            p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", MessageManager.getRawMessage("enable"), p.getName())).toComponent()), 20, 60, 20);
                     }
                 }
             } else {

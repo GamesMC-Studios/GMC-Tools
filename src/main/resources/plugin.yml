@@ -66,3 +66,5 @@ commands:
     aliases: [ livestream, stream ]
     usage: /live <link>
   repair:
+  god:
+    usage: /god <on/off>

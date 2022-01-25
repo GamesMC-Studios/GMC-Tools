@@ -61,6 +61,7 @@ arg_must_be_link: '[Podany parametr musi być linkiem.](#ff7e5e)'
 cooldown_message: '[Musisz odczekać %1% sekund, przed kolejnym wysłaniem tego polecenia.](#ff7e5e)'
 
 item_repair: '[Przedmiot w ręku został naprawiony.](#ff7e5e)'
+god_comamnd: '[Tryb nieśmiertelności został %1%.](#ff7e5e)'
 
 join_message_sponsor: '\n&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fwszedł na serwer!\n'
 join_message_ranks: '&8* %luckperms_suffix_element_highest_on_track_serwerowe% &6%player_name% &fwszedł na serwer!'

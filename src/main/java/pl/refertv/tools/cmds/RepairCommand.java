@@ -16,7 +16,7 @@ public class RepairCommand extends CommandBase {
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.repair")) {
             if (CooldownManager.checkCooldown(p.getPlayer())) {
-                CooldownManager.setCooldown(p.getPlayer(), Tools.getSettings().getGetCooldown());
+                CooldownManager.setCooldown(p.getPlayer(), Tools.getSettings().getCooldown());
                 ItemStack item = p.getItemInHand();
                 item.setDurability((short) 0);
                 MessageManager.sendMessage(p, "item_repair");

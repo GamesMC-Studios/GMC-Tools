@@ -88,6 +88,7 @@ public final class Tools extends JavaPlugin {
         this.getCommand("slots").setExecutor(new SlotsCommand());
         this.getCommand("live").setExecutor(new LiveStreamCommand());
         this.getCommand("repair").setExecutor(new RepairCommand());
+        this.getCommand("god").setExecutor(new GodCommand());
 
     }
 
