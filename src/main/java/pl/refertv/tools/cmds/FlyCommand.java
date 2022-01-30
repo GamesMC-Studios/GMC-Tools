@@ -33,7 +33,7 @@ public class FlyCommand extends CommandBase {
                     }
                     if (gracz.getAllowFlight() == true) {
                         gracz.setAllowFlight(false);
-                        p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", p.getName())).toComponent()), 20, 60, 20);
+                        gracz.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("fly_change_by", p.getName())).toComponent()), 20, 60, 20);
                         p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("player_change_fly", MessageManager.getRawMessage("disable"), p.getName())).toComponent()), 20, 60, 20);
                     } else {
                             gracz.setAllowFlight(true);

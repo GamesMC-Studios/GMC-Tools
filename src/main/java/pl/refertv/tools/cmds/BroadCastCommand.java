@@ -22,6 +22,10 @@ public class BroadCastCommand extends CommandBase implements TabCompleter {
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
         if (p.hasPermission("gamesmc.broadcast")) {
+            if (args.length == 0) {
+            MessageManager.sendMessage(p, "invalid_syntax", cmd.getUsage());
+            return true;
+            }
 
             StringBuilder str = new StringBuilder();
             for (int i = 1; i < args.length; ++i) {
@@ -31,9 +35,9 @@ public class BroadCastCommand extends CommandBase implements TabCompleter {
             switch (args[0]) {
                 case "chat" -> {
                     if (args.length == 1) {
-                        MessageManager.sendMessage(p, "not_enough_arguments");
+                        MessageManager.sendMessage(p, "needed_message");
                     } else {
-                        Bukkit.broadcast(LegacyComponentSerializer.legacyAmpersand().deserialize("\n" + "&c&lSERWER &8» &r" + str + "\n"));
+                        Bukkit.broadcast(LegacyComponentSerializer.legacyAmpersand().deserialize("\n" + "&c&lSERWER &8» &7" + str + "\n"));
                         break;
                     }
                 }

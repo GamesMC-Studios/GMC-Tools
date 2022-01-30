@@ -27,13 +27,13 @@ commands:
     aliases: [ głowa ]
   item:
     description: Zmienia nazwę przedmiotu w ręku
-    usage: /item <setname/setlore> <nazwa>
+    usage: /item <setname|setlore|reset> <nazwa>
   speed:
     aliases: [ szybkość, szybkosc ]
   enderchest:
     aliases: [ ec ]
   inv:
-    aliases: [ invsee ]
+    aliases: [ invsee, ekwipunek ]
   heal:
     aliases: [ uzdrowienie ]
   food:
@@ -41,7 +41,7 @@ commands:
   time:
     aliases: [ czas ]
   crafting:
-    aliases: [ craft ]
+    aliases: [ craft, wb ]
   anvil:
     aliases: [ kowadło ]
   pogoda:
@@ -53,9 +53,9 @@ commands:
   loom:
   grindstone:
   clear:
-    aliases: [ usunekwipunek ]
+    aliases: [ usunekwipunek, wyczyśćekwipunek ]
   getpos:
-    aliases: [ kordynaty ]
+    aliases: [ kordynaty, mojaaktualnapozycja, mojapozycja ]
   tools:
     aliases: [ gamesmctools ]
   hat:
@@ -66,6 +66,9 @@ commands:
     aliases: [ livestream, stream ]
     usage: /live <link>
   repair:
+    aliases: [ naprawa, napraw ]
   god:
-    usage: /god <on/off>
+    usage: /god <on|off>
   broadcast:
+    usage: /broadcast <title|actionbar|chat> <wiadomość>
+    aliases: [ bc, serwerowyalert, ogłoszenie ]

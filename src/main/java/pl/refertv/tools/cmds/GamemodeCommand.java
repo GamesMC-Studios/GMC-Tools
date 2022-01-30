@@ -19,7 +19,7 @@ public class GamemodeCommand extends CommandBase implements TabCompleter {
 
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
-        if (!(p instanceof Player)) {
+        if ((p instanceof Player)) {
             MessageManager.sendMessage(p, "deny_console");
         }
         if (!p.hasPermission("gamesmc.gamemode")) {
