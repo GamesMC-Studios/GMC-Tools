@@ -2,6 +2,7 @@ package pl.refertv.tools.cmds;
 
 import de.themoep.minedown.MineDown;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -19,9 +20,6 @@ public class GamemodeCommand extends CommandBase implements TabCompleter {
 
     @Override
     protected boolean onCommand(Player p, Command cmd, String label, String[] args) {
-        if ((p instanceof Player)) {
-            MessageManager.sendMessage(p, "deny_console");
-        }
         if (!p.hasPermission("gamesmc.gamemode")) {
             MessageManager.sendMessage(p, "error_no_permission");
             return true;
@@ -43,6 +41,16 @@ public class GamemodeCommand extends CommandBase implements TabCompleter {
         }
         if (mode == null) {
             MessageManager.sendMessage(p, "invaild_argument");
+            return true;
+        }
+        if (args.length == 2) {
+            Player gracz = Bukkit.getPlayer(args[1]);
+            if (gracz == null) {
+                MessageManager.sendMessage(p, "player_offline");
+                return false;
+            }
+            gracz.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("gamemode_change", mode.toString().toLowerCase())).toComponent()), 20, 60, 20);
+            gracz.setGameMode(mode);
             return true;
         }
         p.sendTitle(TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("title")).toComponent()), TextComponent.toLegacyText(new MineDown(MessageManager.getRawMessage("gamemode_change", mode.toString().toLowerCase())).toComponent()), 20, 60, 20);
